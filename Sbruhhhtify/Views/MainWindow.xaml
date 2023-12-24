@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="Sbruhhhtify.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Sbruhhhtify"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid 
+        Width="1000" 
+        Height="800" 
+        Background="#494848"
+        Name="MainPage">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60"></ColumnDefinition>
+            <ColumnDefinition Width="940"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+        <StackPanel
+            Height="800"
+            Width="70"
+            Grid.Column="0"
+            Background="#303030">
+            <ItemsControl
+                Height="800"
+                Width="70"
+                ItemsSource="{Binding MainModels}">
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button
+                            Width="60"
+                            Height="60"
+                            Background="{Binding Color, Mode=OneWay}"
+                            Command="{Binding DataContext.ChangeContent, ElementName=MainPage}"
+                            CommandParameter="{Binding Name}">
+                                <Image Source="{Binding Imgsource, Mode=OneWay}"></Image>
+                        </Button>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+
+        <UserControl Grid.Column="1" Content="{Binding View}">
+        </UserControl>
+    </Grid>
+</Window>

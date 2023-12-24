@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Sbruhhhtify (Package)": {
+      "commandName": "MsixPackage",
+      "nativeDebugging": true
+    },
+    "Sbruhhhtify (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
