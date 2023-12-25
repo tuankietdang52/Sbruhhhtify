@@ -321,3 +321,13 @@ C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.
 C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Assets\Wide310x150Logo.scale-200.png
 C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Sbruhhhtify.Properties.Resources.resources
 C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Sbruhhhtify.csproj.GenerateResource.cache
+C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Views\FolderView.xbf
+C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Views\FolderView.g.i.cs
+C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Views\FolderView.g.cs
+C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Views\FolderView.xaml
+C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Views\FolderView.xbf
+C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Microsoft.Data.Sqlite.dll
+C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\SQLitePCLRaw.batteries_v2.dll
+C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\SQLitePCLRaw.core.dll
+C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\e_sqlite3.dll

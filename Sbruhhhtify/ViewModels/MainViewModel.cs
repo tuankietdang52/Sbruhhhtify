@@ -18,7 +18,7 @@ namespace Sbruhhhtify.ViewModels
         public ObservableCollection<MainModel> MainModels { get; set; }
 
         [ObservableProperty]
-        private Page view;
+        private UserControl view;
 
         public ICommand ChangeContent { get; set; }
 
@@ -26,6 +26,7 @@ namespace Sbruhhhtify.ViewModels
         {
             LoadModels();
             ChangeContent = new RelayCommand<string>(HandleChangeContent);
+            View = new HomeView();
         }
 
 
@@ -42,7 +43,7 @@ namespace Sbruhhhtify.ViewModels
 
         public void HandleChangeContent(string name)
         {
-            ChangeBgButoon(name);
+            ChangeBgButton(name);
 
             switch (name)
             {
@@ -55,12 +56,12 @@ namespace Sbruhhhtify.ViewModels
                     break;
 
                 case "folderbutton":
-                    View = null;
+                    View = new FolderView();
                     break;
             }
         }
 
-        private void ChangeBgButoon(string name)
+        private void ChangeBgButton(string name)
         {
             foreach (var model in MainModels)
             {

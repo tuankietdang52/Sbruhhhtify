@@ -1,5 +1,6 @@
 using ABI.Windows.UI;
 using Microsoft.UI;
+using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -29,6 +30,8 @@ namespace Sbruhhhtify
     /// </summary>
     public sealed partial class MainWindow : Window
     {
+        public static Window MainView;
+
         public MainWindow()
         {
             this.InitializeComponent();
@@ -40,9 +43,28 @@ namespace Sbruhhhtify
         {
             AppWindow.Resize(new Windows.Graphics.SizeInt32 { Height = 800, Width = 1000 });
             AppWindow.SetIcon(@"Assets/Icon/sbruhhhtify.ico");
+            AppWindow.TitleBar.BackgroundColor = Windows.UI.Color.FromArgb(255, 41, 41, 41);
+            AppWindow.TitleBar.ButtonBackgroundColor = Windows.UI.Color.FromArgb(255, 41, 41, 41);
+            DisableResize();
+
+            MainView = View;
 
             MainViewModel mainViewModel = new MainViewModel();
             MainPage.DataContext = mainViewModel;
+        }
+
+        // Disable Resize for User
+        // https://github.com/microsoft/WindowsAppSDK/discussions/1694
+        public void DisableResize()
+        {
+            var windowhandle = WinRT.Interop.WindowNative.GetWindowHandle(this);
+            WindowId windowId = Microsoft.UI.Win32Interop.GetWindowIdFromWindow(windowhandle);
+            var appwindow = AppWindow.GetFromWindowId(windowId);
+            var presenter = appwindow.Presenter as OverlappedPresenter;
+
+            presenter.IsResizable = false;
+            presenter.IsMaximizable = false;
+            presenter.IsMinimizable = false;
         }
     }
 }

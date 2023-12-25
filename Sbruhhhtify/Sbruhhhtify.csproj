@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
@@ -33,9 +33,6 @@
     <Content Remove="Assets\Square44x44Logo.targetsize-32.png" />
     <Content Remove="Assets\Square44x44Logo.targetsize-48.png" />
   </ItemGroup>
-  <ItemGroup>
-    <None Remove="Views\HomeView.xaml" />
-  </ItemGroup>
 
   <ItemGroup>
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -49,6 +46,7 @@
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.0" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.231115000" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.2428" />
     <Manifest Include="$(ApplicationManifest)" />
@@ -67,8 +65,9 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-  </ItemGroup>
-  <ItemGroup>
+    <Page Update="Views\FolderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Update="Views\HomeView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -78,6 +77,10 @@
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
 		</Content>
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Views\FolderView.xaml" />
+	  <None Remove="Views\HomeView.xaml" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Compile Update="Properties\Resources.Designer.cs">

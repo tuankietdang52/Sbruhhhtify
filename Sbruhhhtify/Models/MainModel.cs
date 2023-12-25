@@ -12,7 +12,7 @@ namespace Sbruhhhtify.Models
 {
     public partial class MainModel : ObservableObject
     {
-        private string iconpath = $"{AppDomain.CurrentDomain.BaseDirectory}\\Assets\\Icon\\";
+        private readonly string iconpath = $"{AppDomain.CurrentDomain.BaseDirectory}\\Assets\\Icon\\";
 
         [ObservableProperty]
         private string name;

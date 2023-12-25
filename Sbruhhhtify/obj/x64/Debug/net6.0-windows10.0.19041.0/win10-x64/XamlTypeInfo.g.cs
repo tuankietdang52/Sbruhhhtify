@@ -229,9 +229,9 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
             _typeNameTable[3] = "Boolean";
-            _typeNameTable[4] = "Sbruhhhtify.Views.HomeView";
-            _typeNameTable[5] = "Microsoft.UI.Xaml.Controls.Page";
-            _typeNameTable[6] = "Microsoft.UI.Xaml.Controls.UserControl";
+            _typeNameTable[4] = "Sbruhhhtify.Views.FolderView";
+            _typeNameTable[5] = "Microsoft.UI.Xaml.Controls.UserControl";
+            _typeNameTable[6] = "Sbruhhhtify.Views.HomeView";
             _typeNameTable[7] = "Sbruhhhtify.MainWindow";
             _typeNameTable[8] = "Microsoft.UI.Xaml.Window";
             _typeNameTable[9] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
@@ -244,9 +244,9 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
             _typeTable[3] = typeof(global::System.Boolean);
-            _typeTable[4] = typeof(global::Sbruhhhtify.Views.HomeView);
-            _typeTable[5] = typeof(global::Microsoft.UI.Xaml.Controls.Page);
-            _typeTable[6] = typeof(global::Microsoft.UI.Xaml.Controls.UserControl);
+            _typeTable[4] = typeof(global::Sbruhhhtify.Views.FolderView);
+            _typeTable[5] = typeof(global::Microsoft.UI.Xaml.Controls.UserControl);
+            _typeTable[6] = typeof(global::Sbruhhhtify.Views.HomeView);
             _typeTable[7] = typeof(global::Sbruhhhtify.MainWindow);
             _typeTable[8] = typeof(global::Microsoft.UI.Xaml.Window);
             _typeTable[9] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
@@ -288,7 +288,8 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
         }
 
         private object Activate_0_XamlControlsResources() { return new global::Microsoft.UI.Xaml.Controls.XamlControlsResources(); }
-        private object Activate_4_HomeView() { return new global::Sbruhhhtify.Views.HomeView(); }
+        private object Activate_4_FolderView() { return new global::Sbruhhhtify.Views.FolderView(); }
+        private object Activate_6_HomeView() { return new global::Sbruhhhtify.Views.HomeView(); }
         private object Activate_7_MainWindow() { return new global::Sbruhhhtify.MainWindow(); }
         private object Activate_9_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
@@ -335,19 +336,22 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
                 xamlType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 4:   //  Sbruhhhtify.Views.HomeView
-                userType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_4_HomeView;
+            case 4:   //  Sbruhhhtify.Views.FolderView
+                userType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_4_FolderView;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 5:   //  Microsoft.UI.Xaml.Controls.Page
+            case 5:   //  Microsoft.UI.Xaml.Controls.UserControl
                 xamlType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 6:   //  Microsoft.UI.Xaml.Controls.UserControl
-                xamlType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+            case 6:   //  Sbruhhhtify.Views.HomeView
+                userType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_6_HomeView;
+                userType.SetIsLocalType();
+                xamlType = userType;
                 break;
 
             case 7:   //  Sbruhhhtify.MainWindow

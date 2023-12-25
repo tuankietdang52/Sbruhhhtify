@@ -30,25 +30,25 @@
     <AppXManifest Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-12-24T13:32:26.696</Modified>
+      <Modified>2023-12-25T12:47:13.724</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-12-24T13:19:48.087</Modified>
+      <Modified>2023-12-25T12:38:28.806</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Sbruhhhtify.runtimeconfig.json">
       <PackagePath>Sbruhhhtify.runtimeconfig.json</PackagePath>
-      <Modified>2023-12-24T12:11:02.235</Modified>
+      <Modified>2023-12-25T05:13:39.148</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Sbruhhhtify.dll">
       <PackagePath>Sbruhhhtify.dll</PackagePath>
-      <Modified>2023-12-24T13:32:26.406</Modified>
+      <Modified>2023-12-25T12:47:13.427</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Sbruhhhtify.exe</PackagePath>
-      <Modified>2023-12-24T13:32:26.412</Modified>
+      <Modified>2023-12-25T12:47:13.431</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\folder.png">
       <PackagePath>Assets\Icon\folder.png</PackagePath>
@@ -168,7 +168,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Sbruhhhtify.deps.json">
       <PackagePath>Sbruhhhtify.deps.json</PackagePath>
-      <Modified>2023-12-24T12:11:02.102</Modified>
+      <Modified>2023-12-25T12:10:55.435</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.25\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -1070,6 +1070,10 @@
       <PackagePath>CommunityToolkit.Mvvm.dll</PackagePath>
       <Modified>2023-10-24T20:16:06.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\.nuget\packages\microsoft.data.sqlite.core\8.0.0\lib\net6.0\Microsoft.Data.Sqlite.dll">
+      <PackagePath>Microsoft.Data.Sqlite.dll</PackagePath>
+      <Modified>2023-10-31T22:15:36.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\.nuget\packages\microsoft.windowsappsdk\1.4.231115000\lib\net6.0-windows10.0.18362.0\Microsoft.InteractiveExperiences.Projection.dll">
       <PackagePath>Microsoft.InteractiveExperiences.Projection.dll</PackagePath>
       <Modified>2023-11-15T05:46:50.000</Modified>
@@ -1126,9 +1130,25 @@
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.Net.dll</PackagePath>
       <Modified>2023-11-15T21:04:54.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\.nuget\packages\sqlitepclraw.bundle_e_sqlite3\2.1.6\lib\netstandard2.0\SQLitePCLRaw.batteries_v2.dll">
+      <PackagePath>SQLitePCLRaw.batteries_v2.dll</PackagePath>
+      <Modified>2023-08-23T18:41:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\.nuget\packages\sqlitepclraw.core\2.1.6\lib\netstandard2.0\SQLitePCLRaw.core.dll">
+      <PackagePath>SQLitePCLRaw.core.dll</PackagePath>
+      <Modified>2023-08-23T18:38:38.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\.nuget\packages\sqlitepclraw.provider.e_sqlite3\2.1.6\lib\net6.0-windows7.0\SQLitePCLRaw.provider.e_sqlite3.dll">
+      <PackagePath>SQLitePCLRaw.provider.e_sqlite3.dll</PackagePath>
+      <Modified>2023-08-23T18:38:52.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\.nuget\packages\microsoft.windowsappsdk\1.4.231115000\runtimes\win10-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll">
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
       <Modified>2023-11-13T13:49:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\.nuget\packages\sqlitepclraw.lib.e_sqlite3\2.1.6\runtimes\win-x64\native\e_sqlite3.dll">
+      <PackagePath>e_sqlite3.dll</PackagePath>
+      <Modified>2023-08-23T18:33:44.000</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
