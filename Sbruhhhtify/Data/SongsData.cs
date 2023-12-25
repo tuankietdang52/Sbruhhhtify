@@ -1,5 +1,5 @@
 ﻿using Microsoft.Data.Sqlite;
-using Sbruhhhtify.Songs;
+using Sbruhhhtify.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

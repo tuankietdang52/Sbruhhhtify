@@ -30,25 +30,25 @@
     <AppXManifest Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-12-25T12:47:13.724</Modified>
+      <Modified>2023-12-25T12:58:55.513</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-12-25T12:38:28.806</Modified>
+      <Modified>2023-12-25T12:58:55.113</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Sbruhhhtify.runtimeconfig.json">
       <PackagePath>Sbruhhhtify.runtimeconfig.json</PackagePath>
-      <Modified>2023-12-25T05:13:39.148</Modified>
+      <Modified>2023-12-25T12:58:54.783</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Sbruhhhtify.dll">
       <PackagePath>Sbruhhhtify.dll</PackagePath>
-      <Modified>2023-12-25T12:47:13.427</Modified>
+      <Modified>2023-12-25T12:58:53.857</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Sbruhhhtify.exe</PackagePath>
-      <Modified>2023-12-25T12:47:13.431</Modified>
+      <Modified>2023-12-25T12:58:53.904</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\folder.png">
       <PackagePath>Assets\Icon\folder.png</PackagePath>
@@ -168,7 +168,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Sbruhhhtify.deps.json">
       <PackagePath>Sbruhhhtify.deps.json</PackagePath>
-      <Modified>2023-12-25T12:10:55.435</Modified>
+      <Modified>2023-12-25T12:58:54.673</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.25\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>

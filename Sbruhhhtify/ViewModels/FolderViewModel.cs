@@ -2,8 +2,8 @@
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.UI.Xaml;
 using Sbruhhhtify.Data;
+using Sbruhhhtify.Models;
 using Sbruhhhtify.Interface;
-using Sbruhhhtify.Songs;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

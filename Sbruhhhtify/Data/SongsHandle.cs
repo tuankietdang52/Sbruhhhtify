@@ -2,7 +2,7 @@
 using Microsoft.UI.Xaml.Controls;
 using Sbruhhhtify.Error;
 using Sbruhhhtify.Interface;
-using Sbruhhhtify.Songs;
+using Sbruhhhtify.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

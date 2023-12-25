@@ -12,7 +12,7 @@ using Windows.Media.Playback;
 using Windows.Storage;
 using Windows.Storage.FileProperties;
 
-namespace Sbruhhhtify.Songs
+namespace Sbruhhhtify.Models
 {
     public partial class Song : ObservableObject
     {
