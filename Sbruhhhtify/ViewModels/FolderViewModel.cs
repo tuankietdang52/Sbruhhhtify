@@ -13,6 +13,9 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.Storage.FileProperties;
 using Windows.Storage.Pickers;
+using Sbruhhhtify.Views;
+using Sbruhhhtify.Dialog;
+using System.Xml.Linq;
 
 namespace Sbruhhhtify.ViewModels
 {
@@ -22,17 +25,25 @@ namespace Sbruhhhtify.ViewModels
         private ObservableCollection<Song> listSong;
         public ICommand Add {  get; set; }
         public ICommand Delete { get; set; }
+        public ICommand OpenSong { get; set; }
 
         public FolderViewModel()
         {
+            SongsHandle.Subscribe(this);
             GetData();
-            Add = new RelayCommand(HandleAddSong);
-            Delete = new RelayCommand<string>(HandleDeleteSong);
+            GenerateCommand();
         }
 
         public void GetData()
         {
             ListSong = SongsHandle.GetData();
+        }
+
+        private void GenerateCommand()
+        {
+            Add = new RelayCommand(HandleAddSong);
+            Delete = new RelayCommand<string>(HandleDeleteSong);
+            OpenSong = new RelayCommand<Song>(ToSongView);
         }
 
         public void SetList(ObservableCollection<Song> list)
@@ -55,12 +66,23 @@ namespace Sbruhhhtify.ViewModels
 
             var song = SongsHandle.ConvertFileToSong(file);
 
-            SongsHandle.Insert(song, this);
+            SongsHandle.Insert(song);
         }
 
-        public void HandleDeleteSong(string path)
+        private void HandleDeleteSong(string path)
         {
-            SongsHandle.Delete(path, this);
+            SongsHandle.Delete(path);
+        }
+
+        private void ToSongView(Song song)
+        {
+            if (!song.IsLoaded)
+            {
+                PopupDialog.Show($"Cannot load {song.Name}, please delete and add again");
+                return;
+            }
+
+            MainViewModel.Instance.View = new SongView(song);
         }
     }
 }

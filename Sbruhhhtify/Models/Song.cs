@@ -1,5 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using Microsoft.UI.Xaml;
+using Sbruhhhtify.Data;
+using Sbruhhhtify.Dialog;
+using Sbruhhhtify.Error;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -28,6 +31,10 @@ namespace Sbruhhhtify.Models
         [ObservableProperty]
         private string songpath;
 
+        public bool IsLoaded = true;
+
+        public Song Instance { get; set; }
+
         private DateTime creationtime;
         public DateTime CreationTime { 
             get { return creationtime; } 
@@ -51,13 +58,17 @@ namespace Sbruhhhtify.Models
 
         private MediaPlayer mediaPlayer = new MediaPlayer();
 
-        public Song() { }
+        public Song()
+        {
+            Instance = this;
+        }
 
         public Song(string Name, string Songpath, DateTime CreationTime)
         {
             this.Name = Name;
             this.Songpath = Songpath;
             this.CreationTime = CreationTime;
+            Instance = this;
             HandleSetDuration();
         }
 
@@ -69,10 +80,20 @@ namespace Sbruhhhtify.Models
 
         public async void HandleSetDuration()
         {
-            StorageFile file = await StorageFile.GetFileFromPathAsync(Songpath);
-            MusicProperties properties = await file.Properties.GetMusicPropertiesAsync();
+            try
+            {
+                StorageFile file = await StorageFile.GetFileFromPathAsync(Songpath);
+                MusicProperties properties = await file.Properties.GetMusicPropertiesAsync();
 
-            Length = properties.Duration;
+                Length = properties.Duration;
+            }
+            catch (Exception ex) {
+                IsLoaded = false;
+
+                SongsHandle.Delete(Songpath);
+                SongModel.Player.Pause();
+                PopupDialog.Show($"Cannot load {Name}, please delete and add again\nError:" + ex);
+            }
         }
 
         private void SetDuration()

@@ -30,29 +30,49 @@
     <AppXManifest Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-12-25T12:58:55.513</Modified>
+      <Modified>2023-12-28T15:55:13.711</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-12-25T12:58:55.113</Modified>
+      <Modified>2023-12-28T15:06:23.356</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Sbruhhhtify.runtimeconfig.json">
       <PackagePath>Sbruhhhtify.runtimeconfig.json</PackagePath>
-      <Modified>2023-12-25T12:58:54.783</Modified>
+      <Modified>2023-12-28T15:06:23.159</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Sbruhhhtify.dll">
       <PackagePath>Sbruhhhtify.dll</PackagePath>
-      <Modified>2023-12-25T12:58:53.857</Modified>
+      <Modified>2023-12-28T15:55:13.418</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Sbruhhhtify.exe</PackagePath>
-      <Modified>2023-12-25T12:58:53.904</Modified>
+      <Modified>2023-12-28T15:55:13.426</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\folder.png">
       <PackagePath>Assets\Icon\folder.png</PackagePath>
       <Modified>2023-12-24T09:48:25.184</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\next.png">
+      <PackagePath>Assets\Icon\next.png</PackagePath>
+      <Modified>2023-12-28T12:41:54.323</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\pause.png">
+      <PackagePath>Assets\Icon\pause.png</PackagePath>
+      <Modified>2023-12-28T12:34:48.031</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\play.png">
+      <PackagePath>Assets\Icon\play.png</PackagePath>
+      <Modified>2023-12-28T12:07:03.787</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\previous.png">
+      <PackagePath>Assets\Icon\previous.png</PackagePath>
+      <Modified>2023-12-28T12:41:51.995</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\replay.png">
+      <PackagePath>Assets\Icon\replay.png</PackagePath>
+      <Modified>2023-12-28T12:55:02.578</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\sbruhhhtify.ico">
       <PackagePath>Assets\Icon\sbruhhhtify.ico</PackagePath>
@@ -168,7 +188,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Sbruhhhtify.deps.json">
       <PackagePath>Sbruhhhtify.deps.json</PackagePath>
-      <Modified>2023-12-25T12:58:54.673</Modified>
+      <Modified>2023-12-28T15:06:23.010</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.25\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>

@@ -8,7 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Width="940" Height="800" Background="#494848" Name="View">
+    <Grid Width="940" Height="800" Background="#494848" Name="folderView">
         <Grid.RowDefinitions>
             <RowDefinition Height="530"></RowDefinition>
             <RowDefinition Height="100"></RowDefinition>
@@ -35,11 +35,13 @@
                         <Button
                             Width="740"
                             Height="100"
-                            Background="#3F3F3F">
+                            Background="#3F3F3F"
+                            Command="{Binding DataContext.OpenSong, ElementName=folderView}"
+                            CommandParameter="{Binding Instance}">
                             <Canvas Width="740">
                                 <Canvas.Resources>
                                     <Style TargetType="TextBlock">
-                                        <Setter Property="Canvas.Top" Value="-10"></Setter>
+                                        <Setter Property="Canvas.Top" Value="-7"></Setter>
                                     </Style>
                                 </Canvas.Resources>
                                 <TextBlock 
@@ -63,12 +65,12 @@
                                 </TextBlock>
                                 <Button 
                                     Canvas.Left="640"
-                                    Canvas.Top="-25"
+                                    Canvas.Top="-22"
                                     Canvas.ZIndex="100"
                                     VerticalAlignment="Center"
                                     Width="50"
                                     Height="50"
-                                    Command="{Binding DataContext.Delete, ElementName=View}"
+                                    Command="{Binding DataContext.Delete, ElementName=folderView}"
                                     CommandParameter="{Binding Songpath}">
                                         X
                                 </Button>

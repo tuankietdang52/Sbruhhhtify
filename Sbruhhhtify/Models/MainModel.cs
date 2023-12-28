@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Media.Imaging;
+using Sbruhhhtify.Data;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,7 +13,6 @@ namespace Sbruhhhtify.Models
 {
     public partial class MainModel : ObservableObject
     {
-        private readonly string iconpath = $"{AppDomain.CurrentDomain.BaseDirectory}\\Assets\\Icon\\";
 
         [ObservableProperty]
         private string name;
@@ -66,7 +66,7 @@ namespace Sbruhhhtify.Models
 
         private void SetImg()
         {
-            Imgsource = new BitmapImage(new Uri(iconpath + Source));
+            Imgsource = new BitmapImage(new Uri(SongsHandle.IconPath + Source));
         }
     }
 }

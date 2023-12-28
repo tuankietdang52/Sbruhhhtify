@@ -17,6 +17,8 @@ namespace Sbruhhhtify.ViewModels
     {
         public ObservableCollection<MainModel> MainModels { get; set; }
 
+        public static MainViewModel Instance { get; set; }
+
         [ObservableProperty]
         private UserControl view;
 
@@ -27,6 +29,7 @@ namespace Sbruhhhtify.ViewModels
             LoadModels();
             ChangeContent = new RelayCommand<string>(HandleChangeContent);
             View = new HomeView();
+            Instance = this;
         }
 
 

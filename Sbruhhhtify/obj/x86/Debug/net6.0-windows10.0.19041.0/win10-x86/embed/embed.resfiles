@@ -1,3 +1,5 @@
 App.xbf
-MainWindow.xbf
+Views\FolderView.xbf
 Views\HomeView.xbf
+Views\MainWindow.xbf
+Views\SongView.xbf

@@ -40,6 +40,21 @@
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\folder.png">
       <PackagePath>Assets\Icon\folder.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\next.png">
+      <PackagePath>Assets\Icon\next.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\pause.png">
+      <PackagePath>Assets\Icon\pause.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\play.png">
+      <PackagePath>Assets\Icon\play.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\previous.png">
+      <PackagePath>Assets\Icon\previous.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\replay.png">
+      <PackagePath>Assets\Icon\replay.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\sbruhhhtify.ico">
       <PackagePath>Assets\Icon\sbruhhhtify.ico</PackagePath>
     </AppxPackagedFile>

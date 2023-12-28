@@ -31,7 +31,7 @@ namespace Sbruhhhtify.Views
         {
             FolderViewModel folderViewModel = new FolderViewModel();
 
-            View.DataContext = folderViewModel;
+            folderView.DataContext = folderViewModel;
         }
     }
 }

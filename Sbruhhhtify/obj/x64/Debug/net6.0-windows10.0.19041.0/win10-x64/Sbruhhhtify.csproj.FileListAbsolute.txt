@@ -331,3 +331,13 @@ C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Debug\net6.
 C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
+C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Views\SongView.xbf
+C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Views\SongView.g.i.cs
+C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Views\SongView.g.cs
+C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Views\SongView.xaml
+C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Views\SongView.xbf
+C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Assets\Icon\play.png
+C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Assets\Icon\pause.png
+C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Assets\Icon\next.png
+C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Assets\Icon\previous.png
+C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Debug\net6.0-windows10.0.19041.0\win10-x64\Assets\Icon\replay.png

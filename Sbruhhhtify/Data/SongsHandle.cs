@@ -1,8 +1,9 @@
 ﻿using Microsoft.Data.Sqlite;
 using Microsoft.UI.Xaml.Controls;
-using Sbruhhhtify.Error;
+using Sbruhhhtify.Dialog;
 using Sbruhhhtify.Interface;
 using Sbruhhhtify.Models;
+using Sbruhhhtify.Error;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -17,7 +18,28 @@ namespace Sbruhhhtify.Data
 {
     public class SongsHandle
     {
+        public static readonly string IconPath = $"{AppDomain.CurrentDomain.BaseDirectory}\\Assets\\Icon\\";
+
+        private static List<IListSong<Song>> ObserverList = new List<IListSong<Song>>();
         public SongsHandle() { }
+
+        public static void Update()
+        {
+            foreach (var list in ObserverList)
+            {
+                list.GetData();
+            }
+        }
+
+        public static void Subscribe(IListSong<Song> subscriber)
+        {
+            ObserverList.Add(subscriber);
+        }
+
+        public void Unsubcribe(IListSong<Song> song)
+        {
+            ObserverList.Remove(song);
+        }
 
         public static Song ConvertFileToSong(StorageFile file)
         {
@@ -32,38 +54,66 @@ namespace Sbruhhhtify.Data
             return data.GetData();
         }
 
-        public static void Insert(Song song, IListSong<Song> ViewModel)
+        public static void Insert(Song song)
         {
             try
             {
                 SongsData data = new SongsData();
                 data.Insert(song);
 
-                var list = data.GetData();
-
-                ViewModel.SetList(list);
+                Update();
             } 
             catch (SqliteException ex)
             {
-                SongException.IsAlreadyAdded(ex.Message);
+                PopupDialog.Show($"Song is already added {ex.Message}");
             }
         }
 
-        public static void Delete(string path, IListSong<Song> ViewModel)
+        public static void Delete(string path)
         {
             try
             {
                 SongsData data = new SongsData();
                 data.Delete(path);
 
-                var list = data.GetData();
-
-                ViewModel.SetList(list);
+                Update();
             }
             catch (Exception ex)
             {
-                SongException.UnknowException(ex.Message);
+                PopupDialog.Show(ex.Message);
             }
+        }
+
+        public static Song GetPreviousSong(Song current)
+        {
+            var list = GetData();
+
+            for (int index = 0; index < list.Count; index++)
+            {
+                if (!current.Songpath.Equals(list[index].Songpath)) continue;
+
+                int previous = index - 1 < 0 ? list.Count - 1 : index - 1;
+
+                return list[previous];
+            }
+
+            throw new NotFoundSongException();
+        }
+
+        public static Song GetNextSong(Song current)
+        {
+            var list = GetData();
+
+            for (int index = 0; index < list.Count; index++)
+            {
+                if (!current.Songpath.Equals(list[index].Songpath)) continue;
+
+                int next = index + 1 >= list.Count ? 0 : index + 1;
+
+                return list[next];
+            }
+
+            throw new NotFoundSongException();
         }
     }
 }
