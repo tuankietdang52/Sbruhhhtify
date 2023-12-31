@@ -91,8 +91,7 @@ namespace Sbruhhhtify.Models
                 IsLoaded = false;
 
                 SongsHandle.Delete(Songpath);
-                SongModel.Player.Pause();
-                PopupDialog.Show($"Cannot load {Name}, please delete and add again\nError:" + ex);
+                PopupDialog.ShowError($"Cannot load {Name}\nError:" + ex);
             }
         }
 

@@ -28,8 +28,6 @@ namespace Sbruhhhtify.Models
 
         public bool IsGetError = false;
 
-        public static MediaPlayer Player = new MediaPlayer();
-
         public SongModel(Song Song)
         {
             LoadSong(Song);
@@ -44,9 +42,8 @@ namespace Sbruhhhtify.Models
             }
             catch (NotFoundSongException ex)
             {
-                Player.Pause();
                 IsGetError = true;
-                PopupDialog.Show("Cannot found song\nError: " + ex);
+                PopupDialog.ShowError("Cannot found song\nError: " + ex);
             }
         }
 
@@ -55,15 +52,21 @@ namespace Sbruhhhtify.Models
             Current = Song;
 
             if (!Current.IsLoaded) throw new NotFoundSongException();
-
-            Player.Source = MediaSource.CreateFromUri(new Uri(Current.Songpath));
-            Player.Volume = 1;
         }
 
         private void LoadPrevAndNext(Song Song)
         {
             Prev = SongsHandle.GetPreviousSong(Song);
             Next = SongsHandle.GetNextSong(Song);
+        }
+
+        public MediaPlayer GetMedia()
+        {
+            MediaPlayer media = new MediaPlayer();
+            media.Source = MediaSource.CreateFromUri(new Uri(Current.Songpath));
+            media.Volume = 1;
+
+            return media;
         }
     }
 }

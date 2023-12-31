@@ -10,6 +10,7 @@ namespace Sbruhhhtify.Views
 {
     public sealed partial class SongView : UserControl
     {
+        public static Button button;
         public SongView()
         {
             throw new NotFoundSongException();

@@ -65,7 +65,7 @@ namespace Sbruhhhtify.Data
             } 
             catch (SqliteException ex)
             {
-                PopupDialog.Show($"Song is already added {ex.Message}");
+                PopupDialog.ShowError($"Song is already added {ex.Message}");
             }
         }
 
@@ -80,7 +80,7 @@ namespace Sbruhhhtify.Data
             }
             catch (Exception ex)
             {
-                PopupDialog.Show(ex.Message);
+                PopupDialog.ShowError(ex.Message);
             }
         }
 

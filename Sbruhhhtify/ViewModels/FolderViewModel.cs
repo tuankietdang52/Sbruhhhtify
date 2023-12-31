@@ -78,7 +78,7 @@ namespace Sbruhhhtify.ViewModels
         {
             if (!song.IsLoaded)
             {
-                PopupDialog.Show($"Cannot load {song.Name}, please delete and add again");
+                PopupDialog.ShowError($"Cannot load {song.Name}, please delete and add again");
                 return;
             }
 

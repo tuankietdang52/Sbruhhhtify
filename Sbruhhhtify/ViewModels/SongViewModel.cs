@@ -1,16 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using Microsoft.UI;
 using Microsoft.UI.Xaml.Media;
 using Sbruhhhtify.Models;
-using Sbruhhhtify.Error;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.UI;
 using Windows.Media.Playback;
-using Windows.Media.Core;
 using Sbruhhhtify.Dialog;
 using Sbruhhhtify.Data;
 using System.Windows.Input;
@@ -30,6 +23,8 @@ namespace Sbruhhhtify.ViewModels
         [ObservableProperty]
         private BitmapImage playStopIcon;
 
+        private MediaPlayer player;
+
         private bool isPause;
         public bool IsPause { 
             get {  return isPause; }
@@ -46,6 +41,8 @@ namespace Sbruhhhtify.ViewModels
         public ICommand Previous { get; set; }
 
         public ICommand Next { get; set; }
+
+        private readonly Microsoft.UI.Dispatching.DispatcherQueue mainthread = Microsoft.UI.Dispatching.DispatcherQueue.GetForCurrentThread();
 
         public SongViewModel() { }
 
@@ -76,11 +73,16 @@ namespace Sbruhhhtify.ViewModels
         private void LoadModel(Song current)
         {
             Song = new SongModel(current);
+
+            if (Song.IsGetError) return;
+
+            player = Song.GetMedia();
+            player.MediaEnded += EndSong;
         }
 
         private void PlaySong()
         {
-            SongModel.Player.Play();
+            player.Play();
             IsPause = false;
         }
 
@@ -93,7 +95,7 @@ namespace Sbruhhhtify.ViewModels
 
         private void Stop()
         {
-            SongModel.Player.Pause();
+            player.Pause();
             IsPause = true;
             PlayStop = new RelayCommand(Resume);
         }
@@ -101,7 +103,7 @@ namespace Sbruhhhtify.ViewModels
         private void Resume()
         {
             IsPause = false;
-            SongModel.Player.Play();
+            player.Play();
             PlayStop = new RelayCommand(Stop);
         }
 
@@ -115,16 +117,28 @@ namespace Sbruhhhtify.ViewModels
             MainViewModel.Instance.View = new SongView(Song.Next);
         }
 
-        //private void dosomething()
-        //{
-        //    PopupDialog.Show(PlayStopIcon.UriSource.AbsolutePath);
-        //    IsPause = true;
-        //    PlayStop = new RelayCommand(Resume);
+        private void EndSong(MediaPlayer sender, object arg)
+        {
+            try
+            {
+                // Binding property can only be changed when in main thread
+                // In an event where not in main thread so the app will throw
+                // System.Runtime.InteropServices.COMException (0x8001010E)
+                mainthread.TryEnqueue(() =>
+                {
+                    IsPause = true;
+                    PlayStop = new RelayCommand(Resume);
 
-        //    SongModel.Player.Pause();
-        //    PlayStopIcon = new BitmapImage(new Uri($"{SongsHandle.IconPath}replay.png"));
-        //    SongModel.Player.Position = new TimeSpan(0, 0, 0);
-        //}
+                    player.Pause();
+                    PlayStopIcon = new BitmapImage(new Uri($"{SongsHandle.IconPath}replay.png"));
+                    player.Position = new TimeSpan(0, 0, 0);
+                });
+            }
+            catch (Exception ex)
+            {
+                PopupDialog.ShowError($"{ex.ToString()}");
+            }
+        }
 
         private void ChangeStopPlayIcon()
         {
@@ -137,7 +151,6 @@ namespace Sbruhhhtify.ViewModels
             {
                 source = new Uri($"{SongsHandle.IconPath}pause.png");
             }
-
 
             PlayStopIcon = new BitmapImage(source);
         }
