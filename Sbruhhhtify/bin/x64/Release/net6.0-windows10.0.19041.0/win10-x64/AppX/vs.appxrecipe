@@ -19,7 +19,7 @@
     <WindowsSdkPath>
     </WindowsSdkPath>
     <LayoutDir>C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Release\net6.0-windows10.0.19041.0\win10-x64\AppX</LayoutDir>
-    <RegisteredManifestChecksum>28B050A8FA96FC409B8D227801F4A9BEB3577ED09112500000B317A8385DC28C</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>4F48A415DB1B79D158F96A55A1AF0A0FA065E25D7D1FFCE2B36D2FBC526C5B66</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>e7210ac8-7450-4b4f-873f-a558edb34e6a_1.0.0.0_x64__mdtdy63a0eab0</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>e7210ac8-7450-4b4f-873f-a558edb34e6a_mdtdy63a0eab0!App</RegisteredUserModeAppID>
     <RegisteredPackageID>e7210ac8-7450-4b4f-873f-a558edb34e6a</RegisteredPackageID>
@@ -30,25 +30,161 @@
     <AppXManifest Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Release\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-12-24T11:36:31.510</Modified>
+      <Modified>2024-01-05T15:22:23.846</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Release\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-12-24T11:36:30.292</Modified>
+      <Modified>2024-01-05T15:10:22.973</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Release\net6.0-windows10.0.19041.0\win10-x64\Sbruhhhtify.runtimeconfig.json">
       <PackagePath>Sbruhhhtify.runtimeconfig.json</PackagePath>
-      <Modified>2023-12-24T10:57:25.569</Modified>
+      <Modified>2024-01-05T15:10:22.864</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Release\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Sbruhhhtify.exe</PackagePath>
-      <Modified>2023-12-24T11:36:30.014</Modified>
+      <Modified>2024-01-05T15:22:22.732</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\folder.png">
+      <PackagePath>Assets\Icon\folder.png</PackagePath>
+      <Modified>2023-12-24T09:48:25.184</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\next.png">
+      <PackagePath>Assets\Icon\next.png</PackagePath>
+      <Modified>2023-12-28T12:41:54.323</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\pause.png">
+      <PackagePath>Assets\Icon\pause.png</PackagePath>
+      <Modified>2023-12-28T12:34:48.031</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\play.png">
+      <PackagePath>Assets\Icon\play.png</PackagePath>
+      <Modified>2023-12-28T12:07:03.787</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\previous.png">
+      <PackagePath>Assets\Icon\previous.png</PackagePath>
+      <Modified>2023-12-28T12:41:51.995</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\replay.png">
+      <PackagePath>Assets\Icon\replay.png</PackagePath>
+      <Modified>2023-12-28T12:55:02.578</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\sbruhhhtify.ico">
+      <PackagePath>Assets\Icon\sbruhhhtify.ico</PackagePath>
+      <Modified>2023-12-24T07:42:10.392</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\sbruhhhtify.png">
+      <PackagePath>Assets\Icon\sbruhhhtify.png</PackagePath>
+      <Modified>2023-12-24T07:40:00.852</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\search.png">
+      <PackagePath>Assets\Icon\search.png</PackagePath>
+      <Modified>2023-12-24T09:46:15.211</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\LockScreenLogo.scale-200.png">
+      <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
+      <Modified>2023-12-23T17:23:31.351</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\SplashScreen.scale-200.png">
+      <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
+      <Modified>2023-12-23T17:23:31.352</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square150x150Logo.scale-200.png">
+      <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
+      <Modified>2023-12-23T17:23:31.353</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png</PackagePath>
+      <Modified>2023-12-24T09:09:16.954</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png</PackagePath>
+      <Modified>2023-12-24T09:09:16.984</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png</PackagePath>
+      <Modified>2023-12-24T09:09:17.085</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png</PackagePath>
+      <Modified>2023-12-24T09:09:17.014</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png</PackagePath>
+      <Modified>2023-12-24T09:09:17.044</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
+      <Modified>2023-12-24T09:09:16.795</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
+      <Modified>2023-12-24T09:09:16.927</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-32.png</PackagePath>
+      <Modified>2023-12-24T09:09:16.848</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
+      <Modified>2023-12-24T09:09:16.879</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square44x44Logo.scale-100.png">
+      <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
+      <Modified>2023-12-24T09:09:16.464</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square44x44Logo.scale-125.png">
+      <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
+      <Modified>2023-12-24T09:09:16.505</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square44x44Logo.scale-150.png">
+      <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
+      <Modified>2023-12-24T09:09:16.534</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square44x44Logo.scale-200.png">
+      <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
+      <Modified>2023-12-24T09:09:16.565</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square44x44Logo.scale-400.png">
+      <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
+      <Modified>2023-12-24T09:09:16.595</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square44x44Logo.targetsize-16.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
+      <Modified>2023-12-24T09:09:16.627</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square44x44Logo.targetsize-24.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24.png</PackagePath>
+      <Modified>2023-12-24T09:09:16.660</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+      <Modified>2023-12-24T09:09:16.825</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square44x44Logo.targetsize-256.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
+      <Modified>2023-12-24T09:09:16.764</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square44x44Logo.targetsize-32.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-32.png</PackagePath>
+      <Modified>2023-12-24T09:09:16.691</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square44x44Logo.targetsize-48.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
+      <Modified>2023-12-24T09:09:16.723</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\StoreLogo.png">
+      <PackagePath>Assets\StoreLogo.png</PackagePath>
+      <Modified>2023-12-23T17:23:31.354</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Wide310x150Logo.scale-200.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
+      <Modified>2023-12-23T17:23:31.355</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\bin\x64\Release\net6.0-windows10.0.19041.0\win10-x64\Sbruhhhtify.deps.json">
       <PackagePath>Sbruhhhtify.deps.json</PackagePath>
-      <Modified>2023-12-24T10:57:25.526</Modified>
+      <Modified>2024-01-05T15:10:22.817</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.25\runtimes\win-x64\native\Microsoft.DiaSymReader.Native.amd64.dll">
       <PackagePath>Microsoft.DiaSymReader.Native.amd64.dll</PackagePath>
@@ -278,9 +414,13 @@
       <PackagePath>ucrtbase.dll</PackagePath>
       <Modified>2021-09-11T20:05:14.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ADMIN\.nuget\packages\microsoft.windowsappsdk\1.4.230913002\runtimes\win10-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll">
+    <AppxPackagedFile Include="C:\Users\ADMIN\.nuget\packages\microsoft.windowsappsdk\1.4.231115000\runtimes\win10-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll">
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
-      <Modified>2023-07-28T17:58:18.000</Modified>
+      <Modified>2023-11-13T13:49:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\.nuget\packages\sqlitepclraw.lib.e_sqlite3\2.1.6\runtimes\win-x64\native\e_sqlite3.dll">
+      <PackagePath>e_sqlite3.dll</PackagePath>
+      <Modified>2023-08-23T18:33:44.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.25\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -944,155 +1084,127 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Release\net6.0-windows10.0.19041.0\win10-x64\R2R\CommunityToolkit.Mvvm.dll">
       <PackagePath>CommunityToolkit.Mvvm.dll</PackagePath>
-      <Modified>2023-12-24T10:57:26.476</Modified>
+      <Modified>2024-01-05T15:10:32.873</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Release\net6.0-windows10.0.19041.0\win10-x64\R2R\Microsoft.Data.Sqlite.dll">
+      <PackagePath>Microsoft.Data.Sqlite.dll</PackagePath>
+      <Modified>2024-01-05T15:10:33.406</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Release\net6.0-windows10.0.19041.0\win10-x64\R2R\Microsoft.InteractiveExperiences.Projection.dll">
       <PackagePath>Microsoft.InteractiveExperiences.Projection.dll</PackagePath>
-      <Modified>2023-12-24T10:57:29.067</Modified>
+      <Modified>2024-01-05T15:10:35.126</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Release\net6.0-windows10.0.19041.0\win10-x64\R2R\Microsoft.WinUI.dll">
       <PackagePath>Microsoft.WinUI.dll</PackagePath>
-      <Modified>2023-12-24T10:57:43.144</Modified>
+      <Modified>2024-01-05T15:10:42.171</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Release\net6.0-windows10.0.19041.0\win10-x64\R2R\Microsoft.Windows.AppLifecycle.Projection.dll">
       <PackagePath>Microsoft.Windows.AppLifecycle.Projection.dll</PackagePath>
-      <Modified>2023-12-24T10:57:43.635</Modified>
+      <Modified>2024-01-05T15:10:42.579</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Release\net6.0-windows10.0.19041.0\win10-x64\R2R\Microsoft.Windows.AppNotifications.Builder.Projection.dll">
       <PackagePath>Microsoft.Windows.AppNotifications.Builder.Projection.dll</PackagePath>
-      <Modified>2023-12-24T10:57:44.101</Modified>
+      <Modified>2024-01-05T15:10:42.987</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Release\net6.0-windows10.0.19041.0\win10-x64\R2R\Microsoft.Windows.AppNotifications.Projection.dll">
       <PackagePath>Microsoft.Windows.AppNotifications.Projection.dll</PackagePath>
-      <Modified>2023-12-24T10:57:44.598</Modified>
+      <Modified>2024-01-05T15:10:43.379</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Release\net6.0-windows10.0.19041.0\win10-x64\R2R\Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll">
       <PackagePath>Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll</PackagePath>
-      <Modified>2023-12-24T10:57:45.487</Modified>
+      <Modified>2024-01-05T15:10:43.772</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Release\net6.0-windows10.0.19041.0\win10-x64\R2R\Microsoft.Windows.ApplicationModel.Resources.Projection.dll">
       <PackagePath>Microsoft.Windows.ApplicationModel.Resources.Projection.dll</PackagePath>
-      <Modified>2023-12-24T10:57:46.443</Modified>
+      <Modified>2024-01-05T15:10:44.181</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Release\net6.0-windows10.0.19041.0\win10-x64\R2R\Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll">
       <PackagePath>Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll</PackagePath>
-      <Modified>2023-12-24T10:57:46.867</Modified>
+      <Modified>2024-01-05T15:10:44.510</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Release\net6.0-windows10.0.19041.0\win10-x64\R2R\Microsoft.Windows.PushNotifications.Projection.dll">
       <PackagePath>Microsoft.Windows.PushNotifications.Projection.dll</PackagePath>
-      <Modified>2023-12-24T10:57:47.439</Modified>
+      <Modified>2024-01-05T15:10:44.934</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Release\net6.0-windows10.0.19041.0\win10-x64\R2R\Microsoft.Windows.Security.AccessControl.Projection.dll">
       <PackagePath>Microsoft.Windows.Security.AccessControl.Projection.dll</PackagePath>
-      <Modified>2023-12-24T10:57:47.902</Modified>
+      <Modified>2024-01-05T15:10:45.249</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Release\net6.0-windows10.0.19041.0\win10-x64\R2R\Microsoft.Windows.System.Power.Projection.dll">
       <PackagePath>Microsoft.Windows.System.Power.Projection.dll</PackagePath>
-      <Modified>2023-12-24T10:57:48.338</Modified>
+      <Modified>2024-01-05T15:10:45.580</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Release\net6.0-windows10.0.19041.0\win10-x64\R2R\Microsoft.Windows.System.Projection.dll">
       <PackagePath>Microsoft.Windows.System.Projection.dll</PackagePath>
-      <Modified>2023-12-24T10:57:48.894</Modified>
+      <Modified>2024-01-05T15:10:45.909</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Release\net6.0-windows10.0.19041.0\win10-x64\R2R\Microsoft.Windows.Widgets.Providers.Projection.dll">
       <PackagePath>Microsoft.Windows.Widgets.Providers.Projection.dll</PackagePath>
-      <Modified>2023-12-24T10:57:49.367</Modified>
+      <Modified>2024-01-05T15:10:46.271</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Release\net6.0-windows10.0.19041.0\win10-x64\R2R\Microsoft.WindowsAppRuntime.Bootstrap.Net.dll">
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.Net.dll</PackagePath>
-      <Modified>2023-12-24T10:57:49.762</Modified>
+      <Modified>2024-01-05T15:10:46.554</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Release\net6.0-windows10.0.19041.0\win10-x64\R2R\SQLitePCLRaw.batteries_v2.dll">
+      <PackagePath>SQLitePCLRaw.batteries_v2.dll</PackagePath>
+      <Modified>2024-01-05T15:10:46.836</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Release\net6.0-windows10.0.19041.0\win10-x64\R2R\SQLitePCLRaw.core.dll">
+      <PackagePath>SQLitePCLRaw.core.dll</PackagePath>
+      <Modified>2024-01-05T15:10:47.151</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Release\net6.0-windows10.0.19041.0\win10-x64\R2R\SQLitePCLRaw.provider.e_sqlite3.dll">
+      <PackagePath>SQLitePCLRaw.provider.e_sqlite3.dll</PackagePath>
+      <Modified>2024-01-05T15:10:47.497</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Release\net6.0-windows10.0.19041.0\win10-x64\R2R\Sbruhhhtify.dll">
       <PackagePath>Sbruhhhtify.dll</PackagePath>
-      <Modified>2023-12-24T11:36:31.282</Modified>
+      <Modified>2024-01-05T15:22:23.725</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Release\net6.0-windows10.0.19041.0\win10-x64\R2R\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
-      <Modified>2023-12-24T10:58:35.686</Modified>
+      <Modified>2024-01-05T15:11:16.767</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\obj\x64\Release\net6.0-windows10.0.19041.0\win10-x64\R2R\WinRT.Runtime.dll">
       <PackagePath>WinRT.Runtime.dll</PackagePath>
-      <Modified>2023-12-24T10:58:38.621</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\folder.png">
-      <PackagePath>Assets\Icon\folder.png</PackagePath>
-      <Modified>2023-12-24T09:48:25.184</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\sbruhhhtify.ico">
-      <PackagePath>Assets\Icon\sbruhhhtify.ico</PackagePath>
-      <Modified>2023-12-24T07:42:10.392</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\sbruhhhtify.png">
-      <PackagePath>Assets\Icon\sbruhhhtify.png</PackagePath>
-      <Modified>2023-12-24T07:40:00.852</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\search.png">
-      <PackagePath>Assets\Icon\search.png</PackagePath>
-      <Modified>2023-12-24T09:46:15.211</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\LockScreenLogo.scale-200.png">
-      <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2023-12-23T17:23:31.351</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\SplashScreen.scale-200.png">
-      <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
-      <Modified>2023-12-23T17:23:31.352</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square150x150Logo.scale-200.png">
-      <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
-      <Modified>2023-12-23T17:23:31.353</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square44x44Logo.scale-200.png">
-      <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
-      <Modified>2023-12-24T09:09:16.565</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
-      <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
-      <Modified>2023-12-24T09:09:16.825</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\StoreLogo.png">
-      <PackagePath>Assets\StoreLogo.png</PackagePath>
-      <Modified>2023-12-23T17:23:31.354</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Wide310x150Logo.scale-200.png">
-      <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
-      <Modified>2023-12-23T17:23:31.355</Modified>
+      <Modified>2024-01-05T15:11:18.552</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
-    <ResolvedSDKReference Include="C:\Users\ADMIN\.nuget\packages\microsoft.windowsappsdk\1.4.230913002\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.4.msix">
+    <ResolvedSDKReference Include="C:\Users\ADMIN\.nuget\packages\microsoft.windowsappsdk\1.4.231115000\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.4.msix">
       <Name>Microsoft.WindowsAppRuntime.1.4</Name>
-      <Version>4000.986.611.0</Version>
+      <Version>4000.1049.117.0</Version>
       <Architecture>x86</Architecture>
-      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.4, MinVersion = 4000.986.611.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
-      <AppxLocation>C:\Users\ADMIN\.nuget\packages\microsoft.windowsappsdk\1.4.230913002\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.4.msix</AppxLocation>
+      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.4, MinVersion = 4000.1049.117.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\ADMIN\.nuget\packages\microsoft.windowsappsdk\1.4.231115000\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.4.msix</AppxLocation>
       <MoreInfo>
       </MoreInfo>
     </ResolvedSDKReference>
-    <ResolvedSDKReference Include="C:\Users\ADMIN\.nuget\packages\microsoft.windowsappsdk\1.4.230913002\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.4.msix">
+    <ResolvedSDKReference Include="C:\Users\ADMIN\.nuget\packages\microsoft.windowsappsdk\1.4.231115000\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.4.msix">
       <Name>Microsoft.WindowsAppRuntime.1.4</Name>
-      <Version>4000.986.611.0</Version>
+      <Version>4000.1049.117.0</Version>
       <Architecture>win32</Architecture>
-      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.4, MinVersion = 4000.986.611.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
-      <AppxLocation>C:\Users\ADMIN\.nuget\packages\microsoft.windowsappsdk\1.4.230913002\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.4.msix</AppxLocation>
+      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.4, MinVersion = 4000.1049.117.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\ADMIN\.nuget\packages\microsoft.windowsappsdk\1.4.231115000\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.4.msix</AppxLocation>
       <MoreInfo>
       </MoreInfo>
     </ResolvedSDKReference>
-    <ResolvedSDKReference Include="C:\Users\ADMIN\.nuget\packages\microsoft.windowsappsdk\1.4.230913002\buildTransitive\..\tools\MSIX\win10-x64\Microsoft.WindowsAppRuntime.1.4.msix">
+    <ResolvedSDKReference Include="C:\Users\ADMIN\.nuget\packages\microsoft.windowsappsdk\1.4.231115000\buildTransitive\..\tools\MSIX\win10-x64\Microsoft.WindowsAppRuntime.1.4.msix">
       <Name>Microsoft.WindowsAppRuntime.1.4</Name>
-      <Version>4000.986.611.0</Version>
+      <Version>4000.1049.117.0</Version>
       <Architecture>x64</Architecture>
-      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.4, MinVersion = 4000.986.611.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
-      <AppxLocation>C:\Users\ADMIN\.nuget\packages\microsoft.windowsappsdk\1.4.230913002\buildTransitive\..\tools\MSIX\win10-x64\Microsoft.WindowsAppRuntime.1.4.msix</AppxLocation>
+      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.4, MinVersion = 4000.1049.117.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\ADMIN\.nuget\packages\microsoft.windowsappsdk\1.4.231115000\buildTransitive\..\tools\MSIX\win10-x64\Microsoft.WindowsAppRuntime.1.4.msix</AppxLocation>
       <MoreInfo>
       </MoreInfo>
     </ResolvedSDKReference>
-    <ResolvedSDKReference Include="C:\Users\ADMIN\.nuget\packages\microsoft.windowsappsdk\1.4.230913002\buildTransitive\..\tools\MSIX\win10-arm64\Microsoft.WindowsAppRuntime.1.4.msix">
+    <ResolvedSDKReference Include="C:\Users\ADMIN\.nuget\packages\microsoft.windowsappsdk\1.4.231115000\buildTransitive\..\tools\MSIX\win10-arm64\Microsoft.WindowsAppRuntime.1.4.msix">
       <Name>Microsoft.WindowsAppRuntime.1.4</Name>
-      <Version>4000.986.611.0</Version>
+      <Version>4000.1049.117.0</Version>
       <Architecture>arm64</Architecture>
-      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.4, MinVersion = 4000.986.611.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
-      <AppxLocation>C:\Users\ADMIN\.nuget\packages\microsoft.windowsappsdk\1.4.230913002\buildTransitive\..\tools\MSIX\win10-arm64\Microsoft.WindowsAppRuntime.1.4.msix</AppxLocation>
+      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.4, MinVersion = 4000.1049.117.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\ADMIN\.nuget\packages\microsoft.windowsappsdk\1.4.231115000\buildTransitive\..\tools\MSIX\win10-arm64\Microsoft.WindowsAppRuntime.1.4.msix</AppxLocation>
       <MoreInfo>
       </MoreInfo>
     </ResolvedSDKReference>

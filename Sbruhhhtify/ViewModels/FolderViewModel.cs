@@ -19,7 +19,7 @@ using System.Xml.Linq;
 
 namespace Sbruhhhtify.ViewModels
 {
-    public partial class FolderViewModel : ObservableObject, IListSong<Song>
+    public partial class FolderViewModel : ObservableObject, IListSong
     {
         [ObservableProperty]
         private ObservableCollection<Song> listSong;
@@ -44,11 +44,6 @@ namespace Sbruhhhtify.ViewModels
             Add = new RelayCommand(HandleAddSong);
             Delete = new RelayCommand<string>(HandleDeleteSong);
             OpenSong = new RelayCommand<Song>(ToSongView);
-        }
-
-        public void SetList(ObservableCollection<Song> list)
-        {
-            ListSong = list;
         }
 
         private async void HandleAddSong()
@@ -82,6 +77,7 @@ namespace Sbruhhhtify.ViewModels
                 return;
             }
 
+            SongsHandle.Unsubcribe(this);
             MainViewModel.Instance.View = new SongView(song);
         }
     }

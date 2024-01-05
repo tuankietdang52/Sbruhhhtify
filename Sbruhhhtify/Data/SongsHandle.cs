@@ -20,7 +20,7 @@ namespace Sbruhhhtify.Data
     {
         public static readonly string IconPath = $"{AppDomain.CurrentDomain.BaseDirectory}\\Assets\\Icon\\";
 
-        private static List<IListSong<Song>> ObserverList = new List<IListSong<Song>>();
+        private static List<IListSong> ObserverList = new List<IListSong>();
         public SongsHandle() { }
 
         public static void Update()
@@ -31,12 +31,12 @@ namespace Sbruhhhtify.Data
             }
         }
 
-        public static void Subscribe(IListSong<Song> subscriber)
+        public static void Subscribe(IListSong subscriber)
         {
             ObserverList.Add(subscriber);
         }
 
-        public void Unsubcribe(IListSong<Song> song)
+        public static void Unsubcribe(IListSong song)
         {
             ObserverList.Remove(song);
         }
@@ -104,16 +104,45 @@ namespace Sbruhhhtify.Data
         {
             var list = GetData();
 
-            for (int index = 0; index < list.Count; index++)
+            for (int i = 0; i < list.Count; i++)
             {
-                if (!current.Songpath.Equals(list[index].Songpath)) continue;
+                if (!current.Songpath.Equals(list[i].Songpath)) continue;
 
-                int next = index + 1 >= list.Count ? 0 : index + 1;
+                int next = i + 1 >= list.Count ? 0 : i + 1;
 
                 return list[next];
             }
 
             throw new NotFoundSongException();
+        }
+
+        public static ObservableCollection<History> GetHistory()
+        {
+            SongsData data = new SongsData();
+
+            return data.GetHistory();
+        }
+
+        public static void AddHistory(Song song)
+        {
+            string path = song.Songpath;
+            History history = new History(song, DateTime.Now);
+
+            SongsData data = new SongsData();
+
+            var list = data.GetHistory();
+            data.ClearHistory();
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i].Song.Songpath == path) continue;
+
+                data.AddHistory(list[i], i + 1);
+                continue;
+            }
+
+            data.AddHistory(history, list.Count + 1);
+            Update();
         }
     }
 }

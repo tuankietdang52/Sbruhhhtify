@@ -12,10 +12,10 @@ namespace Sbruhhhtify
 {
     public partial class App : global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider
     {
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2309")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2311")]
         private global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlMetaDataProvider __appProvider;
 
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2309")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2311")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlMetaDataProvider _AppProvider
         {
@@ -32,7 +32,7 @@ namespace Sbruhhhtify
         /// <summary>
         /// GetXamlType(Type)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2309")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2311")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::Microsoft.UI.Xaml.Markup.IXamlType GetXamlType(global::System.Type type)
         {
@@ -42,7 +42,7 @@ namespace Sbruhhhtify
         /// <summary>
         /// GetXamlType(String)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2309")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2311")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::Microsoft.UI.Xaml.Markup.IXamlType GetXamlType(string fullName)
         {
@@ -52,7 +52,7 @@ namespace Sbruhhhtify
         /// <summary>
         /// GetXmlnsDefinitions()
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2309")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2311")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::Microsoft.UI.Xaml.Markup.XmlnsDefinition[] GetXmlnsDefinitions()
         {
@@ -66,7 +66,7 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
     /// <summary>
     /// Main class for providing metadata for the app or library
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2309")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2311")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public sealed class XamlMetaDataProvider : global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider
     {
@@ -110,7 +110,7 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
         }
     }
 
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2309")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2311")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal partial class XamlTypeInfoProvider
     {
@@ -224,35 +224,37 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[13];
+            _typeNameTable = new string[14];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
             _typeNameTable[3] = "Boolean";
-            _typeNameTable[4] = "Sbruhhhtify.Views.HomeView";
-            _typeNameTable[5] = "Microsoft.UI.Xaml.Controls.Page";
-            _typeNameTable[6] = "Microsoft.UI.Xaml.Controls.UserControl";
+            _typeNameTable[4] = "Sbruhhhtify.Views.FolderView";
+            _typeNameTable[5] = "Microsoft.UI.Xaml.Controls.UserControl";
+            _typeNameTable[6] = "Sbruhhhtify.Views.HomeView";
             _typeNameTable[7] = "Sbruhhhtify.MainWindow";
             _typeNameTable[8] = "Microsoft.UI.Xaml.Window";
-            _typeNameTable[9] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
-            _typeNameTable[10] = "Microsoft.UI.Xaml.DependencyObject";
-            _typeNameTable[11] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
-            _typeNameTable[12] = "Int32";
+            _typeNameTable[9] = "Sbruhhhtify.Views.SongView";
+            _typeNameTable[10] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
+            _typeNameTable[11] = "Microsoft.UI.Xaml.DependencyObject";
+            _typeNameTable[12] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
+            _typeNameTable[13] = "Int32";
 
-            _typeTable = new global::System.Type[13];
+            _typeTable = new global::System.Type[14];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
             _typeTable[3] = typeof(global::System.Boolean);
-            _typeTable[4] = typeof(global::Sbruhhhtify.Views.HomeView);
-            _typeTable[5] = typeof(global::Microsoft.UI.Xaml.Controls.Page);
-            _typeTable[6] = typeof(global::Microsoft.UI.Xaml.Controls.UserControl);
+            _typeTable[4] = typeof(global::Sbruhhhtify.Views.FolderView);
+            _typeTable[5] = typeof(global::Microsoft.UI.Xaml.Controls.UserControl);
+            _typeTable[6] = typeof(global::Sbruhhhtify.Views.HomeView);
             _typeTable[7] = typeof(global::Sbruhhhtify.MainWindow);
             _typeTable[8] = typeof(global::Microsoft.UI.Xaml.Window);
-            _typeTable[9] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
-            _typeTable[10] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
-            _typeTable[11] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
-            _typeTable[12] = typeof(global::System.Int32);
+            _typeTable[9] = typeof(global::Sbruhhhtify.Views.SongView);
+            _typeTable[10] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
+            _typeTable[11] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
+            _typeTable[12] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
+            _typeTable[13] = typeof(global::System.Int32);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -288,9 +290,11 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
         }
 
         private object Activate_0_XamlControlsResources() { return new global::Microsoft.UI.Xaml.Controls.XamlControlsResources(); }
-        private object Activate_4_HomeView() { return new global::Sbruhhhtify.Views.HomeView(); }
+        private object Activate_4_FolderView() { return new global::Sbruhhhtify.Views.FolderView(); }
+        private object Activate_6_HomeView() { return new global::Sbruhhhtify.Views.HomeView(); }
         private object Activate_7_MainWindow() { return new global::Sbruhhhtify.MainWindow(); }
-        private object Activate_9_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private object Activate_9_SongView() { return new global::Sbruhhhtify.Views.SongView(); }
+        private object Activate_10_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -298,7 +302,7 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
             var newItem = (global::System.Object)item;
             collection.Add(newKey, newItem);
         }
-        private void VectorAdd_11_IList(object instance, object item)
+        private void VectorAdd_12_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
@@ -335,19 +339,22 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
                 xamlType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 4:   //  Sbruhhhtify.Views.HomeView
-                userType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_4_HomeView;
+            case 4:   //  Sbruhhhtify.Views.FolderView
+                userType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_4_FolderView;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 5:   //  Microsoft.UI.Xaml.Controls.Page
+            case 5:   //  Microsoft.UI.Xaml.Controls.UserControl
                 xamlType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 6:   //  Microsoft.UI.Xaml.Controls.UserControl
-                xamlType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+            case 6:   //  Sbruhhhtify.Views.HomeView
+                userType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_6_HomeView;
+                userType.SetIsLocalType();
+                xamlType = userType;
                 break;
 
             case 7:   //  Sbruhhhtify.MainWindow
@@ -361,9 +368,16 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
                 xamlType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 9:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
+            case 9:   //  Sbruhhhtify.Views.SongView
+                userType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_9_SongView;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 10:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
                 userType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_9_TreeViewNode;
+                userType.Activator = Activate_10_TreeViewNode;
                 userType.AddMemberName("Children");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("Depth");
@@ -375,18 +389,18 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 10:   //  Microsoft.UI.Xaml.DependencyObject
+            case 11:   //  Microsoft.UI.Xaml.DependencyObject
                 xamlType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 11:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
+            case 12:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
                 userType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.CollectionAdd = VectorAdd_11_IList;
+                userType.CollectionAdd = VectorAdd_12_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 12:   //  Int32
+            case 13:   //  Int32
                 xamlType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
@@ -574,7 +588,7 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
         }
     }
 
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2309")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2311")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal class XamlSystemBaseType : global::Microsoft.UI.Xaml.Markup.IXamlType
     {
@@ -624,7 +638,7 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
     internal delegate object CreateFromStringMethod(string args);
     internal delegate object BoxInstanceMethod(object instance);
 
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2309")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2311")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal class XamlUserType : global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlSystemBaseType
         , global::Microsoft.UI.Xaml.Markup.IXamlType
@@ -855,7 +869,7 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
     internal delegate object Getter(object instance);
     internal delegate void Setter(object instance, object value);
 
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2309")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2311")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal class XamlMember : global::Microsoft.UI.Xaml.Markup.IXamlMember
     {

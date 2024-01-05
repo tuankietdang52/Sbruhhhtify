@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.UI.Xaml.Controls;
+using Sbruhhhtify.Data;
+using Sbruhhhtify.Interface;
 using Sbruhhhtify.Models;
 using Sbruhhhtify.Views;
 using System;
@@ -33,7 +35,7 @@ namespace Sbruhhhtify.ViewModels
         }
 
 
-        public void LoadModels()
+        private void LoadModels()
         {
             ObservableCollection<MainModel> list = new ObservableCollection<MainModel>();
 
@@ -44,8 +46,14 @@ namespace Sbruhhhtify.ViewModels
             MainModels = list;
         }
 
-        public void HandleChangeContent(string name)
+        private void HandleChangeContent(string name)
         {
+            try
+            {
+                SongsHandle.Unsubcribe((IListSong)View.DataContext);
+            }
+            catch { }
+
             ChangeBgButton(name);
 
             switch (name)

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace Sbruhhhtify.Data
 {
@@ -17,6 +18,12 @@ namespace Sbruhhhtify.Data
         {
             connection.Open();
 
+            CreateTableSong();
+            CreateTableHistory();
+        }
+
+        private void CreateTableSong()
+        {
             var create = connection.CreateCommand();
 
             create.CommandText = @"
@@ -29,17 +36,33 @@ namespace Sbruhhhtify.Data
             create.ExecuteNonQuery();
         }
 
+        private void CreateTableHistory()
+        {
+            var create = connection.CreateCommand();
+
+            create.CommandText = @"
+                CREATE TABLE IF NOT EXISTS HISTORY (
+                    NO INT PRIMARY KEY,
+                    PATH TEXT NOT NULL UNIQUE,
+                    TIMEOPEN DATETIME,
+                    FOREIGN KEY (PATH) REFERENCES SONGDATA(PATH) ON DELETE CASCADE
+            )";
+
+            create.ExecuteNonQuery();
+        }
+
         public void Insert(Song song)
         {
             string name = song.Name;
             string path = song.Songpath;
+            var date = song.CreationTime;
 
             using (var transaction = connection.BeginTransaction())
             {
-                var insert = new SqliteCommand(@"INSERT INTO SONGDATA VALUES (@name, @path, @datetime)", connection, transaction);
+                var insert = new SqliteCommand(@"INSERT INTO SONGDATA VALUES (@name, @path, @timecreate)", connection, transaction);
                 insert.Parameters.AddWithValue("@name", name);
                 insert.Parameters.AddWithValue ("@path", path);
-                insert.Parameters.AddWithValue("@datetime", song.CreationTime);
+                insert.Parameters.AddWithValue("@timecreate", date);
 
                 insert.ExecuteNonQuery();
                 transaction.Commit();
@@ -64,7 +87,7 @@ namespace Sbruhhhtify.Data
 
             var get = connection.CreateCommand();
             get.CommandText = (@"
-                SELECT * FROM SONGDATA            
+                SELECT NAME, PATH, TIMECREATE FROM SONGDATA     
             ");
 
             var data = new object[3];
@@ -80,6 +103,67 @@ namespace Sbruhhhtify.Data
                     var date = Convert.ToDateTime(data[2]);
 
                     list.Add(new Song(name, path, date));
+                }
+            }
+
+            return list;
+        }
+
+        public void ClearHistory()
+        {
+            using (var transaction = connection.BeginTransaction())
+            {
+                var delete = new SqliteCommand(@"DELETE FROM HISTORY", connection, transaction);
+
+                delete.ExecuteNonQuery();
+                transaction.Commit();
+            }
+        }
+
+        public void AddHistory(History history, int number)
+        {
+            string path = history.Song.Songpath;
+            var date = history.Timeopen;
+
+            using (var transaction = connection.BeginTransaction())
+            {
+                var insert = new SqliteCommand(@"INSERT INTO HISTORY VALUES (@no, @path, @timeopen)", connection, transaction);
+                insert.Parameters.AddWithValue("@no", number);
+                insert.Parameters.AddWithValue("@path", path);
+                insert.Parameters.AddWithValue("@timeopen", date);
+
+                insert.ExecuteNonQuery();
+                transaction.Commit();
+            }
+        }
+
+        public ObservableCollection<History> GetHistory()
+        {
+            var list = new ObservableCollection<History>();
+
+            var get = connection.CreateCommand();
+            get.CommandText = (@"
+                SELECT NAME, HISTORY.PATH, TIMECREATE, TIMEOPEN
+                FROM SONGDATA, HISTORY
+                WHERE HISTORY.PATH = SONGDATA.PATH
+                ORDER BY NO DESC
+            ");
+
+            var data = new object[4];
+
+            using (var reader = get.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    reader.GetValues(data);
+
+                    var name = Convert.ToString(data[0]);
+                    var path = Convert.ToString(data[1]);
+                    var date = Convert.ToDateTime(data[2]);
+                    var history = Convert.ToDateTime(data[3]);
+
+                    Song song = new Song(name, path, date);
+                    list.Add(new History(song, history));
                 }
             }
 

@@ -10,16 +10,60 @@
 
     <Grid x:ConnectionId='2' Width="940" Height="800" Background="#494848" Name="folderView">
         <Grid.RowDefinitions>
-            <RowDefinition Height="530"></RowDefinition>
+            <RowDefinition Height="630"></RowDefinition>
             <RowDefinition Height="100"></RowDefinition>
         </Grid.RowDefinitions>
+        
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="MV Boli"></Setter>
+            </Style>
+        </Grid.Resources>
+
+        <StackPanel 
+            Grid.Row="0" 
+            Orientation="Horizontal"
+            VerticalAlignment="Top"
+            Margin="0, 50, 15, 0" 
+            Width="740" 
+            Height="50">
+            <Border BorderBrush="Black" BorderThickness="1">
+                <Grid Width="330" Height="50">
+                    <TextBlock 
+                VerticalAlignment="Center"
+                Margin="20, 0, 0, 0">
+                    Name
+                    </TextBlock>
+                </Grid>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1">
+                <Grid Width="170" Height="50">
+                    <TextBlock 
+                TextAlignment="Center" 
+                VerticalAlignment="Center">
+                    Length
+                    </TextBlock>
+                </Grid>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1">
+                <Grid Width="234" Height="50">
+                    <TextBlock 
+                Margin="0, 0, 20, 0" 
+                TextAlignment="Right" 
+                VerticalAlignment="Center">
+                    Last Date Played
+                    </TextBlock>
+                </Grid>
+            </Border>
+        </StackPanel>
+
         <ScrollViewer 
             Width="740" 
             Height="500" 
             Background="#292929" 
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            Margin="0, 50, 15, 0"
+            Margin="0, 70, 15, 0"
             Grid.Row="0"
             VerticalScrollBarVisibility="Visible">
 
@@ -42,6 +86,7 @@
                                 <Canvas.Resources>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="Canvas.Top" Value="-7"></Setter>
+                                        <Setter Property="FontFamily" Value="MV Boli"></Setter>
                                     </Style>
                                 </Canvas.Resources>
                                 <TextBlock 
@@ -64,7 +109,7 @@
                                     Text="{Binding Date, Mode=OneWay}">
                                 </TextBlock>
                                 <Button 
-                                    Canvas.Left="640"
+                                    Canvas.Left="660"
                                     Canvas.Top="-22"
                                     Canvas.ZIndex="100"
                                     VerticalAlignment="Center"

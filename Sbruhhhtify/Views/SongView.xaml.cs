@@ -2,6 +2,7 @@ using Microsoft.UI.Xaml.Controls;
 using Sbruhhhtify.Models;
 using Sbruhhhtify.ViewModels;
 using Sbruhhhtify.Error;
+using Sbruhhhtify.Data;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -10,7 +11,6 @@ namespace Sbruhhhtify.Views
 {
     public sealed partial class SongView : UserControl
     {
-        public static Button button;
         public SongView()
         {
             throw new NotFoundSongException();
@@ -27,6 +27,8 @@ namespace Sbruhhhtify.Views
             SongViewModel songViewModel = new SongViewModel(song);
 
             this.DataContext = songViewModel;
+
+            SongsHandle.AddHistory(song);
         }
     }
 }

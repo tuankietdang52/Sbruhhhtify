@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace Sbruhhhtify.Interface
 {
-    public interface IListSong<T>
+    public interface IListSong
     {
         void GetData();
-        void SetList(ObservableCollection<T> list);
     }
 }

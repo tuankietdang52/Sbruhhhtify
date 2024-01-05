@@ -23,7 +23,7 @@ namespace Sbruhhhtify.ViewModels
         [ObservableProperty]
         private BitmapImage playStopIcon;
 
-        private MediaPlayer player;
+        public static MediaPlayer SongPlayer = new MediaPlayer();
 
         private bool isPause;
         public bool IsPause { 
@@ -76,13 +76,20 @@ namespace Sbruhhhtify.ViewModels
 
             if (Song.IsGetError) return;
 
-            player = Song.GetMedia();
-            player.MediaEnded += EndSong;
+            InitSongPlayer();
+        }
+
+        private void InitSongPlayer()
+        {
+            SongPlayer.Dispose();
+            SongPlayer = new MediaPlayer();
+            SongPlayer = Song.GetMedia();
+            SongPlayer.MediaEnded += EndSong;
         }
 
         private void PlaySong()
         {
-            player.Play();
+            SongPlayer.Play();
             IsPause = false;
         }
 
@@ -95,7 +102,7 @@ namespace Sbruhhhtify.ViewModels
 
         private void Stop()
         {
-            player.Pause();
+            SongPlayer.Pause();
             IsPause = true;
             PlayStop = new RelayCommand(Resume);
         }
@@ -103,7 +110,7 @@ namespace Sbruhhhtify.ViewModels
         private void Resume()
         {
             IsPause = false;
-            player.Play();
+            SongPlayer.Play();
             PlayStop = new RelayCommand(Stop);
         }
 
@@ -129,9 +136,9 @@ namespace Sbruhhhtify.ViewModels
                     IsPause = true;
                     PlayStop = new RelayCommand(Resume);
 
-                    player.Pause();
+                    SongPlayer.Pause();
                     PlayStopIcon = new BitmapImage(new Uri($"{SongsHandle.IconPath}replay.png"));
-                    player.Position = new TimeSpan(0, 0, 0);
+                    SongPlayer.Position = new TimeSpan(0, 0, 0);
                 });
             }
             catch (Exception ex)

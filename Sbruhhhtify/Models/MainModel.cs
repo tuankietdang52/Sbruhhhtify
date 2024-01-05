@@ -13,7 +13,6 @@ namespace Sbruhhhtify.Models
 {
     public partial class MainModel : ObservableObject
     {
-
         [ObservableProperty]
         private string name;
 
