@@ -42,7 +42,6 @@ namespace Sbruhhhtify.Data
 
             create.CommandText = @"
                 CREATE TABLE IF NOT EXISTS HISTORY (
-                    NO INT PRIMARY KEY,
                     PATH TEXT NOT NULL UNIQUE,
                     TIMEOPEN DATETIME,
                     FOREIGN KEY (PATH) REFERENCES SONGDATA(PATH) ON DELETE CASCADE
@@ -120,15 +119,14 @@ namespace Sbruhhhtify.Data
             }
         }
 
-        public void AddHistory(History history, int number)
+        public void AddHistory(History history)
         {
             string path = history.Song.Songpath;
             var date = history.Timeopen;
 
             using (var transaction = connection.BeginTransaction())
             {
-                var insert = new SqliteCommand(@"INSERT INTO HISTORY VALUES (@no, @path, @timeopen)", connection, transaction);
-                insert.Parameters.AddWithValue("@no", number);
+                var insert = new SqliteCommand(@"INSERT INTO HISTORY VALUES (@path, @timeopen)", connection, transaction);
                 insert.Parameters.AddWithValue("@path", path);
                 insert.Parameters.AddWithValue("@timeopen", date);
 
@@ -144,9 +142,8 @@ namespace Sbruhhhtify.Data
             var get = connection.CreateCommand();
             get.CommandText = (@"
                 SELECT NAME, HISTORY.PATH, TIMECREATE, TIMEOPEN
-                FROM SONGDATA, HISTORY
+                FROM HISTORY, SONGDATA
                 WHERE HISTORY.PATH = SONGDATA.PATH
-                ORDER BY NO DESC
             ");
 
             var data = new object[4];

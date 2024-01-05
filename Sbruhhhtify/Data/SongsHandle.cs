@@ -36,9 +36,9 @@ namespace Sbruhhhtify.Data
             ObserverList.Add(subscriber);
         }
 
-        public static void Unsubcribe(IListSong song)
+        public static void Unsubcribe(IListSong subscriber)
         {
-            ObserverList.Remove(song);
+            ObserverList.Remove(subscriber);
         }
 
         public static Song ConvertFileToSong(StorageFile file)
@@ -133,15 +133,15 @@ namespace Sbruhhhtify.Data
             var list = data.GetHistory();
             data.ClearHistory();
 
+            data.AddHistory(history);
+
             for (int i = 0; i < list.Count; i++)
             {
                 if (list[i].Song.Songpath == path) continue;
 
-                data.AddHistory(list[i], i + 1);
-                continue;
+                data.AddHistory(list[i]);
             }
 
-            data.AddHistory(history, list.Count + 1);
             Update();
         }
     }
