@@ -36,24 +36,6 @@ namespace Sbruhhhtify.ViewModels
             OpenSong = new RelayCommand<Song>(ToSongView);
         }
 
-        private async void HandleAddSong()
-        {
-            // https://github.com/microsoft/WindowsAppSDK/issues/1188
-
-            FileOpenPicker filepicker = new FileOpenPicker();
-
-            var windowhandle = WinRT.Interop.WindowNative.GetWindowHandle(MainWindow.MainView);
-
-            WinRT.Interop.InitializeWithWindow.Initialize(filepicker, windowhandle);
-
-            filepicker.FileTypeFilter.Add(".mp3");
-            var file = await filepicker.PickSingleFileAsync();
-
-            var song = SongsHandle.ConvertFileToSong(file);
-
-            SongsHandle.Insert(song);
-        }
-
         private void ToSongView(Song song)
         {
             if (!song.IsLoaded)
