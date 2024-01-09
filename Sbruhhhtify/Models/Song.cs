@@ -99,5 +99,10 @@ namespace Sbruhhhtify.Models
         {
             Duration = Length.ToString(@"hh\:mm\:ss");
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

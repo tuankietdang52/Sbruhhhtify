@@ -23,11 +23,11 @@ namespace Sbruhhhtify.Data
         private static List<IListSong> ObserverList = new List<IListSong>();
         public SongsHandle() { }
 
-        public static void Update()
+        public static void Notify()
         {
             foreach (var list in ObserverList)
             {
-                list.GetData();
+                list.Update();
             }
         }
 
@@ -61,7 +61,7 @@ namespace Sbruhhhtify.Data
                 SongsData data = new SongsData();
                 data.Insert(song);
 
-                Update();
+                Notify();
             } 
             catch (SqliteException ex)
             {
@@ -76,7 +76,7 @@ namespace Sbruhhhtify.Data
                 SongsData data = new SongsData();
                 data.Delete(path);
 
-                Update();
+                Notify();
             }
             catch (Exception ex)
             {
@@ -135,14 +135,14 @@ namespace Sbruhhhtify.Data
 
             data.AddHistory(history);
 
-            for (int i = 0; i < list.Count; i++)
+            foreach (var item in list)
             {
-                if (list[i].Song.Songpath == path) continue;
+                if (item.Song.Songpath == path) continue;
 
-                data.AddHistory(list[i]);
+                data.AddHistory(item);
             }
 
-            Update();
+            Notify();
         }
     }
 }

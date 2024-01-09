@@ -79,9 +79,9 @@
                         CommandParameter="{Binding Song.Instance}">
                             <StackPanel Orientation="Horizontal" Width="740" Height="100">
                                 <StackPanel.Resources>
-                                        <Style TargetType="TextBlock">
-                                            <Setter Property="FontFamily" Value="MV Boli"></Setter>
-                                        </Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="FontFamily" Value="MV Boli"></Setter>
+                                    </Style>
                                 </StackPanel.Resources>
                                 <Grid Width="350" Height="100">
                                     <TextBlock

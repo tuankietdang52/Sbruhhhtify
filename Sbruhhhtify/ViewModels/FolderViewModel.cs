@@ -30,11 +30,11 @@ namespace Sbruhhhtify.ViewModels
         public FolderViewModel()
         {
             SongsHandle.Subscribe(this);
-            GetData();
+            Update();
             GenerateCommand();
         }
 
-        public void GetData()
+        public void Update()
         {
             ListSong = SongsHandle.GetData();
         }

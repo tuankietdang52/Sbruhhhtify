@@ -18,6 +18,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Services.Maps;
 using Windows.UI.Popups;
 
 // To learn more about WinUI, the WinUI project structure,
@@ -30,7 +31,8 @@ namespace Sbruhhhtify
     /// </summary>
     public sealed partial class MainWindow : Window
     {
-        public static Window MainView;
+        private static Window mainView;
+        public static Window MainView { get { return mainView; } }
 
         public MainWindow()
         {
@@ -47,10 +49,8 @@ namespace Sbruhhhtify
             AppWindow.TitleBar.ButtonBackgroundColor = Windows.UI.Color.FromArgb(255, 41, 41, 41);
             DisableResize();
 
-            MainView = View;
-
-            MainViewModel mainViewModel = new MainViewModel();
-            MainPage.DataContext = mainViewModel;
+            mainView = this;
+            MainPage.DataContext = new MainViewModel();
         }
 
         // Disable Resize for User

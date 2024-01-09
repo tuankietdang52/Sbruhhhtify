@@ -2,4 +2,5 @@ App.xbf
 Views\FolderView.xbf
 Views\HomeView.xbf
 Views\MainWindow.xbf
+Views\SearchView.xbf
 Views\SongView.xbf

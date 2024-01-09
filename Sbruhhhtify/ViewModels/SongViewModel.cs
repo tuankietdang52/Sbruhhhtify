@@ -23,7 +23,7 @@ namespace Sbruhhhtify.ViewModels
         [ObservableProperty]
         private BitmapImage playStopIcon;
 
-        public static MediaPlayer SongPlayer = new MediaPlayer();
+        public static MediaPlayer SongPlayer;
 
         private bool isPause;
         public bool IsPause { 
@@ -81,7 +81,7 @@ namespace Sbruhhhtify.ViewModels
 
         private void InitSongPlayer()
         {
-            SongPlayer.Dispose();
+            if (SongPlayer is not null) SongPlayer.Dispose();
             SongPlayer = new MediaPlayer();
             SongPlayer = Song.GetMedia();
             SongPlayer.MediaEnded += EndSong;
@@ -143,13 +143,13 @@ namespace Sbruhhhtify.ViewModels
             }
             catch (Exception ex)
             {
-                PopupDialog.ShowError($"{ex.ToString()}");
+                PopupDialog.ShowError($"{ex}");
             }
         }
 
         private void ChangeStopPlayIcon()
         {
-            Uri source = null;
+            Uri source;
             if (IsPause)
             {
                 source = new Uri($"{SongsHandle.IconPath}play.png");

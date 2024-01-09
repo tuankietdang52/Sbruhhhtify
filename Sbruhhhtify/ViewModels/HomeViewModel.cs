@@ -22,11 +22,11 @@ namespace Sbruhhhtify.ViewModels
         public HomeViewModel()
         {
             SongsHandle.Subscribe(this);
-            GetData();
+            Update();
             GenerateCommand();
         }
 
-        public void GetData()
+        public void Update()
         {
             Histories = SongsHandle.GetHistory();
         }

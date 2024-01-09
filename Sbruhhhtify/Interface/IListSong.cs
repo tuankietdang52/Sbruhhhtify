@@ -10,6 +10,6 @@ namespace Sbruhhhtify.Interface
 {
     public interface IListSong
     {
-        void GetData();
+        void Update();
     }
 }

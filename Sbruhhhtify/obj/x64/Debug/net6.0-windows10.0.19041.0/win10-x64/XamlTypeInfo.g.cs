@@ -224,7 +224,7 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[14];
+            _typeNameTable = new string[16];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
@@ -234,13 +234,15 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
             _typeNameTable[6] = "Sbruhhhtify.Views.HomeView";
             _typeNameTable[7] = "Sbruhhhtify.MainWindow";
             _typeNameTable[8] = "Microsoft.UI.Xaml.Window";
-            _typeNameTable[9] = "Sbruhhhtify.Views.SongView";
-            _typeNameTable[10] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
-            _typeNameTable[11] = "Microsoft.UI.Xaml.DependencyObject";
-            _typeNameTable[12] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
-            _typeNameTable[13] = "Int32";
+            _typeNameTable[9] = "Sbruhhhtify.Views.SearchView";
+            _typeNameTable[10] = "Sbruhhhtify.ViewModels.SearchViewModel";
+            _typeNameTable[11] = "Sbruhhhtify.Views.SongView";
+            _typeNameTable[12] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
+            _typeNameTable[13] = "Microsoft.UI.Xaml.DependencyObject";
+            _typeNameTable[14] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
+            _typeNameTable[15] = "Int32";
 
-            _typeTable = new global::System.Type[14];
+            _typeTable = new global::System.Type[16];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
@@ -250,11 +252,13 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
             _typeTable[6] = typeof(global::Sbruhhhtify.Views.HomeView);
             _typeTable[7] = typeof(global::Sbruhhhtify.MainWindow);
             _typeTable[8] = typeof(global::Microsoft.UI.Xaml.Window);
-            _typeTable[9] = typeof(global::Sbruhhhtify.Views.SongView);
-            _typeTable[10] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
-            _typeTable[11] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
-            _typeTable[12] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
-            _typeTable[13] = typeof(global::System.Int32);
+            _typeTable[9] = typeof(global::Sbruhhhtify.Views.SearchView);
+            _typeTable[10] = typeof(global::Sbruhhhtify.ViewModels.SearchViewModel);
+            _typeTable[11] = typeof(global::Sbruhhhtify.Views.SongView);
+            _typeTable[12] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
+            _typeTable[13] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
+            _typeTable[14] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
+            _typeTable[15] = typeof(global::System.Int32);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -293,8 +297,10 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
         private object Activate_4_FolderView() { return new global::Sbruhhhtify.Views.FolderView(); }
         private object Activate_6_HomeView() { return new global::Sbruhhhtify.Views.HomeView(); }
         private object Activate_7_MainWindow() { return new global::Sbruhhhtify.MainWindow(); }
-        private object Activate_9_SongView() { return new global::Sbruhhhtify.Views.SongView(); }
-        private object Activate_10_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private object Activate_9_SearchView() { return new global::Sbruhhhtify.Views.SearchView(); }
+        private object Activate_10_SearchViewModel() { return new global::Sbruhhhtify.ViewModels.SearchViewModel(); }
+        private object Activate_11_SongView() { return new global::Sbruhhhtify.Views.SongView(); }
+        private object Activate_12_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -302,7 +308,7 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
             var newItem = (global::System.Object)item;
             collection.Add(newKey, newItem);
         }
-        private void VectorAdd_12_IList(object instance, object item)
+        private void VectorAdd_14_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
@@ -368,16 +374,31 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
                 xamlType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 9:   //  Sbruhhhtify.Views.SongView
+            case 9:   //  Sbruhhhtify.Views.SearchView
                 userType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_9_SongView;
+                userType.Activator = Activate_9_SearchView;
+                userType.AddMemberName("SearchVM");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 10:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
+            case 10:   //  Sbruhhhtify.ViewModels.SearchViewModel
+                userType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 11:   //  Sbruhhhtify.Views.SongView
+                userType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_11_SongView;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 12:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
                 userType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_10_TreeViewNode;
+                userType.Activator = Activate_12_TreeViewNode;
                 userType.AddMemberName("Children");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("Depth");
@@ -389,18 +410,18 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 11:   //  Microsoft.UI.Xaml.DependencyObject
+            case 13:   //  Microsoft.UI.Xaml.DependencyObject
                 xamlType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 12:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
+            case 14:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
                 userType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.CollectionAdd = VectorAdd_12_IList;
+                userType.CollectionAdd = VectorAdd_14_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 13:   //  Int32
+            case 15:   //  Int32
                 xamlType = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
@@ -472,52 +493,62 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
             var that = (global::Microsoft.UI.Xaml.Controls.XamlControlsResources)instance;
             that.UseCompactResources = (global::System.Boolean)Value;
         }
-        private object get_1_TreeViewNode_Children(object instance)
+        private object get_1_SearchView_SearchVM(object instance)
+        {
+            var that = (global::Sbruhhhtify.Views.SearchView)instance;
+            return that.SearchVM;
+        }
+        private void set_1_SearchView_SearchVM(object instance, object Value)
+        {
+            var that = (global::Sbruhhhtify.Views.SearchView)instance;
+            that.SearchVM = (global::Sbruhhhtify.ViewModels.SearchViewModel)Value;
+        }
+        private object get_2_TreeViewNode_Children(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Children;
         }
-        private object get_2_TreeViewNode_Content(object instance)
+        private object get_3_TreeViewNode_Content(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Content;
         }
-        private void set_2_TreeViewNode_Content(object instance, object Value)
+        private void set_3_TreeViewNode_Content(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.Content = (global::System.Object)Value;
         }
-        private object get_3_TreeViewNode_Depth(object instance)
+        private object get_4_TreeViewNode_Depth(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Depth;
         }
-        private object get_4_TreeViewNode_HasChildren(object instance)
+        private object get_5_TreeViewNode_HasChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasChildren;
         }
-        private object get_5_TreeViewNode_HasUnrealizedChildren(object instance)
+        private object get_6_TreeViewNode_HasUnrealizedChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasUnrealizedChildren;
         }
-        private void set_5_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
+        private void set_6_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.HasUnrealizedChildren = (global::System.Boolean)Value;
         }
-        private object get_6_TreeViewNode_IsExpanded(object instance)
+        private object get_7_TreeViewNode_IsExpanded(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.IsExpanded;
         }
-        private void set_6_TreeViewNode_IsExpanded(object instance, object Value)
+        private void set_7_TreeViewNode_IsExpanded(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.IsExpanded = (global::System.Boolean)Value;
         }
-        private object get_7_TreeViewNode_Parent(object instance)
+        private object get_8_TreeViewNode_Parent(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Parent;
@@ -537,50 +568,56 @@ namespace Sbruhhhtify.Sbruhhhtify_XamlTypeInfo
                 xamlMember.Getter = get_0_XamlControlsResources_UseCompactResources;
                 xamlMember.Setter = set_0_XamlControlsResources_UseCompactResources;
                 break;
+            case "Sbruhhhtify.Views.SearchView.SearchVM":
+                userType = (global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Sbruhhhtify.Views.SearchView");
+                xamlMember = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlMember(this, "SearchVM", "Sbruhhhtify.ViewModels.SearchViewModel");
+                xamlMember.Getter = get_1_SearchView_SearchVM;
+                xamlMember.Setter = set_1_SearchView_SearchVM;
+                break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Children":
                 userType = (global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlMember(this, "Children", "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>");
-                xamlMember.Getter = get_1_TreeViewNode_Children;
+                xamlMember.Getter = get_2_TreeViewNode_Children;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Content":
                 userType = (global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlMember(this, "Content", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_2_TreeViewNode_Content;
-                xamlMember.Setter = set_2_TreeViewNode_Content;
+                xamlMember.Getter = get_3_TreeViewNode_Content;
+                xamlMember.Setter = set_3_TreeViewNode_Content;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Depth":
                 userType = (global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlMember(this, "Depth", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_3_TreeViewNode_Depth;
+                xamlMember.Getter = get_4_TreeViewNode_Depth;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasChildren":
                 userType = (global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlMember(this, "HasChildren", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_4_TreeViewNode_HasChildren;
+                xamlMember.Getter = get_5_TreeViewNode_HasChildren;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasUnrealizedChildren":
                 userType = (global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlMember(this, "HasUnrealizedChildren", "Boolean");
-                xamlMember.Getter = get_5_TreeViewNode_HasUnrealizedChildren;
-                xamlMember.Setter = set_5_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Getter = get_6_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Setter = set_6_TreeViewNode_HasUnrealizedChildren;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.IsExpanded":
                 userType = (global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlMember(this, "IsExpanded", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_6_TreeViewNode_IsExpanded;
-                xamlMember.Setter = set_6_TreeViewNode_IsExpanded;
+                xamlMember.Getter = get_7_TreeViewNode_IsExpanded;
+                xamlMember.Setter = set_7_TreeViewNode_IsExpanded;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Parent":
                 userType = (global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::Sbruhhhtify.Sbruhhhtify_XamlTypeInfo.XamlMember(this, "Parent", "Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember.Getter = get_7_TreeViewNode_Parent;
+                xamlMember.Getter = get_8_TreeViewNode_Parent;
                 xamlMember.SetIsReadOnly();
                 break;
             }

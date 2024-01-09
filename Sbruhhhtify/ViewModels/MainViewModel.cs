@@ -63,7 +63,7 @@ namespace Sbruhhhtify.ViewModels
                     break;
 
                 case "searchbutton":
-                    View = null;
+                    View = new SearchView();
                     break;
 
                 case "folderbutton":
