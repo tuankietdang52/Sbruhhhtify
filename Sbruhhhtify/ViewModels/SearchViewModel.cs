@@ -1,10 +1,12 @@
-﻿using Microsoft.UI.Input;
+﻿using CommunityToolkit.Mvvm.Input;
+using Microsoft.UI.Input;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Sbruhhhtify.Data;
 using Sbruhhhtify.Dialog;
 using Sbruhhhtify.Interface;
 using Sbruhhhtify.Models;
+using Sbruhhhtify.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace Sbruhhhtify.ViewModels
 {
-    public class SearchViewModel : IListSong
+    public partial class SearchViewModel : IListSong
     {
         public ObservableCollection<Song> SearchList { get; set; }
         private List<Song> songList; 
@@ -51,6 +53,19 @@ namespace Sbruhhhtify.ViewModels
 
                 SearchList.Add(song);
             }
+        }
+
+        [RelayCommand]
+        public void ToSongView(Song song)
+        {
+            if (!song.IsLoaded)
+            {
+                PopupDialog.ShowError($"Cannot load {song.Name}, please delete and add again");
+                return;
+            }
+
+            SongsHandle.Unsubcribe(this);
+            MainViewModel.Instance.View = new SongView(song);
         }
     }
 }

@@ -14,7 +14,7 @@
                  HorizontalAlignment="Center"
                  VerticalAlignment="Top"
                  Margin="0, 20, 0, 0"
-                                               >
+                                                     >
         </TextBox>
         
         <ScrollViewer x:ConnectionId='4' 
@@ -39,7 +39,9 @@
                         <Button
                             Width="850"
                             Height="100"
-                            Background="#3F3F3F">
+                            Background="#3F3F3F"
+                            Command="{Binding DataContext.ToSongViewCommand, ElementName=searchView}"
+                            CommandParameter="{Binding Instance}">
                             <StackPanel Orientation="Horizontal" Width="850" Height="100">
                                 <StackPanel.Resources>
                                     <Style TargetType="TextBlock">

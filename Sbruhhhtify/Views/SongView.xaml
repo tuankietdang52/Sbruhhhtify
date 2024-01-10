@@ -17,6 +17,7 @@
         <Grid.Resources>
             <Style TargetType="TextBlock">
                 <Setter Property="FontFamily" Value="MV Boli"></Setter>
+                <Setter Property="Foreground" Value="White"></Setter>
             </Style>
         </Grid.Resources>
 
@@ -27,31 +28,60 @@
             DataContext="{Binding Current}">
             <TextBlock
                 FontSize="40"
-                Foreground="White"
                 FontWeight="Bold"
-                FontFamily="MV Boli"
                 Canvas.Left="20"
                 Canvas.Top="400"
                 Text="{Binding Name}">
             </TextBlock>
         </Canvas>
 
+        <StackPanel
+            Width="550"
+            Grid.Row="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Orientation="Horizontal"
+            Margin="0, 30, 0, 0"
+            Spacing="10">
+
+            <TextBlock
+                Width="30"
+                FontSize="20"
+                FontWeight="Bold"
+                Text="0">
+            </TextBlock>
+            <Slider
+                Width="380" 
+                Minimum="0" 
+                Maximum="{Binding LengthSec}"
+                PointerCaptureLost="{x:Bind SongVM.ChangePosition}"
+                Value="{Binding DataContext.Position, Mode=TwoWay, ElementName=songView}">
+            </Slider>
+            <TextBlock
+                Width="140"
+                FontSize="20"
+                FontWeight="Bold"
+                Text="{Binding Current.Duration}">
+            </TextBlock>
+        </StackPanel>
+
         <RelativePanel 
             Width="540"
             Grid.Row="1"
             HorizontalAlignment="Center"
-            VerticalAlignment="Center">
+            VerticalAlignment="Center"
+            Margin="0, 0, 60, 0">
             <Button 
                 Name="center" 
                 RelativePanel.AlignHorizontalCenterWithPanel="True" 
                 Width="100" 
                 Height="100"
                 Command="{Binding DataContext.PlayStop, ElementName=songView}">
-                    <Image 
-                        Width="50"
-                        Height="50"
-                        Source="{Binding DataContext.PlayStopIcon, ElementName=songView}">
-                    </Image>
+                <Image 
+                    Width="50"
+                    Height="50"
+                    Source="{Binding DataContext.PlayStopIcon, ElementName=songView}">
+                </Image>
             </Button>
             <Button 
                 RelativePanel.LeftOf="center" 
@@ -59,11 +89,11 @@
                 Width="100"
                 Height="100"
                 Command="{Binding DataContext.Previous, ElementName=songView}">
-                    <Image
-                        Width="50"
-                        Height="50"
-                        Source="/Assets/Icon/previous.png">
-                    </Image>
+                <Image
+                    Width="50"
+                    Height="50"
+                    Source="/Assets/Icon/previous.png">
+                </Image>
             </Button>
             <Button 
                 RelativePanel.RightOf="center" 
@@ -71,11 +101,11 @@
                 Width="100" 
                 Height="100"
                 Command="{Binding DataContext.Next, ElementName=songView}">
-                    <Image 
-                        Width="50"
-                        Height="50"
-                        Source="/Assets/Icon/next.png">
-                    </Image>
+                <Image 
+                    Width="50"
+                    Height="50"
+                    Source="/Assets/Icon/next.png">
+                </Image>
             </Button>
         </RelativePanel>
     </Grid>

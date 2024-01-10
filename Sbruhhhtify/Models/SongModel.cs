@@ -26,6 +26,8 @@ namespace Sbruhhhtify.Models
         [ObservableProperty]
         private Song next;
 
+        public double LengthSec { get; set; }
+
         public bool IsGetError = false;
 
         public SongModel(Song Song)
@@ -52,6 +54,8 @@ namespace Sbruhhhtify.Models
             Current = Song;
 
             if (!Current.IsLoaded) throw new NotFoundSongException();
+
+            LengthSec = Current.Length.TotalSeconds;
         }
 
         private void LoadPrevAndNext(Song Song)

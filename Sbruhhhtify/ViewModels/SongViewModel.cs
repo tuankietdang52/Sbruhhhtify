@@ -10,11 +10,19 @@ using System.Windows.Input;
 using CommunityToolkit.Mvvm.Input;
 using Sbruhhhtify.Views;
 using Microsoft.UI.Xaml.Media.Imaging;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Threading;
+using System.Timers;
 
 namespace Sbruhhhtify.ViewModels
 {
     public partial class SongViewModel : ObservableObject
     {
+        private Microsoft.UI.Dispatching.DispatcherQueue mainthread = Microsoft.UI.Dispatching.DispatcherQueue.GetForCurrentThread();
+
         [ObservableProperty]
         private SongModel song;
 
@@ -22,6 +30,9 @@ namespace Sbruhhhtify.ViewModels
 
         [ObservableProperty]
         private BitmapImage playStopIcon;
+
+        [ObservableProperty]
+        private double position;
 
         public static MediaPlayer SongPlayer;
 
@@ -35,14 +46,16 @@ namespace Sbruhhhtify.ViewModels
             } 
         }
 
+        private bool IsEnd = false;
+
+        private System.Timers.Timer time;
+
         [ObservableProperty]
         private ICommand playStop;
 
         public ICommand Previous { get; set; }
 
         public ICommand Next { get; set; }
-
-        private readonly Microsoft.UI.Dispatching.DispatcherQueue mainthread = Microsoft.UI.Dispatching.DispatcherQueue.GetForCurrentThread();
 
         public SongViewModel() { }
 
@@ -82,15 +95,31 @@ namespace Sbruhhhtify.ViewModels
         private void InitSongPlayer()
         {
             if (SongPlayer is not null) SongPlayer.Dispose();
+
             SongPlayer = new MediaPlayer();
             SongPlayer = Song.GetMedia();
             SongPlayer.MediaEnded += EndSong;
         }
 
-        private void PlaySong()
+        private void InitTime()
         {
-            SongPlayer.Play();
-            IsPause = false;
+            Position = 0;
+
+            try { time.Elapsed -= ElapsedSecond; }
+            catch { }
+
+            time = new System.Timers.Timer();
+            time.Interval = 1000;
+            time.Elapsed += ElapsedSecond;
+        }
+
+        private void ElapsedSecond(Object source, System.Timers.ElapsedEventArgs e)
+        {
+            mainthread.TryEnqueue(() =>
+            {
+                if (Position >= Song.LengthSec) return;
+                Position++;
+            });
         }
 
         private void GenerateCommand()
@@ -100,15 +129,27 @@ namespace Sbruhhhtify.ViewModels
             Next = new RelayCommand(ToNextSong);
         }
 
+        private void PlaySong()
+        {
+            InitTime();
+
+            SongPlayer.Play();
+            time.Start();
+            IsPause = false;
+            PlayStop = new RelayCommand(Stop);
+        }
+
         private void Stop()
         {
             SongPlayer.Pause();
+            time.Stop();
             IsPause = true;
             PlayStop = new RelayCommand(Resume);
         }
 
         private void Resume()
         {
+            time.Start();
             IsPause = false;
             SongPlayer.Play();
             PlayStop = new RelayCommand(Stop);
@@ -126,6 +167,7 @@ namespace Sbruhhhtify.ViewModels
 
         private void EndSong(MediaPlayer sender, object arg)
         {
+            IsEnd = true;
             try
             {
                 // Binding property can only be changed when in main thread
@@ -134,7 +176,7 @@ namespace Sbruhhhtify.ViewModels
                 mainthread.TryEnqueue(() =>
                 {
                     IsPause = true;
-                    PlayStop = new RelayCommand(Resume);
+                    PlayStop = new RelayCommand(PlaySong);
 
                     SongPlayer.Pause();
                     PlayStopIcon = new BitmapImage(new Uri($"{SongsHandle.IconPath}replay.png"));
@@ -160,6 +202,21 @@ namespace Sbruhhhtify.ViewModels
             }
 
             PlayStopIcon = new BitmapImage(source);
+        }
+
+        public void ChangePosition(object sender, RoutedEventArgs e)
+        {
+            var slider = sender as Slider;
+            var value = slider.Value;
+
+            mainthread.TryEnqueue(() =>
+            {
+                Position = value;
+
+                TimeSpan time = TimeSpan.FromSeconds(value);
+
+                SongPlayer.Position = time;
+            });
         }
     }
 }

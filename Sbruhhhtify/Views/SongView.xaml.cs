@@ -11,6 +11,7 @@ namespace Sbruhhhtify.Views
 {
     public sealed partial class SongView : UserControl
     {
+        public SongViewModel SongVM { get; set; }
         public SongView()
         {
             throw new NotFoundSongException();
@@ -24,9 +25,9 @@ namespace Sbruhhhtify.Views
 
         public void Load(Song song)
         {
-            SongViewModel songViewModel = new SongViewModel(song);
+            SongVM = new SongViewModel(song);
 
-            this.DataContext = songViewModel;
+            this.DataContext = SongVM;
 
             SongsHandle.AddHistory(song);
         }
