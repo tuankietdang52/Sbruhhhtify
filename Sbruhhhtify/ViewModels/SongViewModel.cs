@@ -21,7 +21,7 @@ namespace Sbruhhhtify.ViewModels
 {
     public partial class SongViewModel : ObservableObject
     {
-        private Microsoft.UI.Dispatching.DispatcherQueue mainthread = Microsoft.UI.Dispatching.DispatcherQueue.GetForCurrentThread();
+        private readonly Microsoft.UI.Dispatching.DispatcherQueue mainthread = Microsoft.UI.Dispatching.DispatcherQueue.GetForCurrentThread();
 
         [ObservableProperty]
         private SongModel song;
@@ -46,16 +46,14 @@ namespace Sbruhhhtify.ViewModels
             } 
         }
 
-        private bool IsEnd = false;
-
         private System.Timers.Timer time;
 
         [ObservableProperty]
         private ICommand playStop;
 
-        public ICommand Previous { get; set; }
+        public ICommand Previous => new RelayCommand(ToPrevSong);
 
-        public ICommand Next { get; set; }
+        public ICommand Next => new RelayCommand(ToNextSong);
 
         public SongViewModel() { }
 
@@ -122,12 +120,7 @@ namespace Sbruhhhtify.ViewModels
             });
         }
 
-        private void GenerateCommand()
-        {
-            PlayStop = new RelayCommand(Stop);
-            Previous = new RelayCommand(ToPrevSong);
-            Next = new RelayCommand(ToNextSong);
-        }
+        private void GenerateCommand() => PlayStop = new RelayCommand(Stop);
 
         private void PlaySong()
         {
@@ -167,7 +160,6 @@ namespace Sbruhhhtify.ViewModels
 
         private void EndSong(MediaPlayer sender, object arg)
         {
-            IsEnd = true;
             try
             {
                 // Binding property can only be changed when in main thread
