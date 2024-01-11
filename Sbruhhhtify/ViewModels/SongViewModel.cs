@@ -21,7 +21,7 @@ namespace Sbruhhhtify.ViewModels
 {
     public partial class SongViewModel : ObservableObject
     {
-        private readonly Microsoft.UI.Dispatching.DispatcherQueue mainthread = Microsoft.UI.Dispatching.DispatcherQueue.GetForCurrentThread();
+        private readonly Microsoft.UI.Dispatching.DispatcherQueue mainDispatcher = Microsoft.UI.Dispatching.DispatcherQueue.GetForCurrentThread();
 
         [ObservableProperty]
         private SongModel song;
@@ -46,6 +46,10 @@ namespace Sbruhhhtify.ViewModels
             } 
         }
 
+        private bool isEnd = false;
+
+        private bool isChangeSong = false;
+
         private System.Timers.Timer time;
 
         [ObservableProperty]
@@ -57,11 +61,14 @@ namespace Sbruhhhtify.ViewModels
 
         public SongViewModel() { }
 
-        public SongViewModel(Song current)
+        public SongViewModel(Song current, bool IsChangeSong)
         {
+            isChangeSong = IsChangeSong;
+
             RandomBgColor();
             LoadModel(current);
             GenerateCommand();
+
             PlaySong();
         }
 
@@ -87,7 +94,8 @@ namespace Sbruhhhtify.ViewModels
 
             if (Song.IsGetError) return;
 
-            InitSongPlayer();
+            if (isChangeSong || SongPlayer is null) InitSongPlayer();
+            InitTime();
         }
 
         private void InitSongPlayer()
@@ -101,78 +109,79 @@ namespace Sbruhhhtify.ViewModels
 
         private void InitTime()
         {
-            Position = 0;
+            time = new System.Timers.Timer(1000);
+            time.AutoReset = true;
 
+            // try to remove last event
             try { time.Elapsed -= ElapsedSecond; }
             catch { }
 
-            time = new System.Timers.Timer();
-            time.Interval = 1000;
             time.Elapsed += ElapsedSecond;
         }
 
         private void ElapsedSecond(Object source, System.Timers.ElapsedEventArgs e)
         {
-            mainthread.TryEnqueue(() =>
-            {
-                if (Position >= Song.LengthSec) return;
-                Position++;
-            });
+            if (Position >= Song.LengthSec) return;
+            mainDispatcher.TryEnqueue(() => Position++);
         }
 
         private void GenerateCommand() => PlayStop = new RelayCommand(Stop);
 
         private void PlaySong()
         {
-            InitTime();
+            Position = SongPlayer.Position.TotalSeconds;
 
-            SongPlayer.Play();
-            time.Start();
-            IsPause = false;
-            PlayStop = new RelayCommand(Stop);
+            Resume();
         }
 
         private void Stop()
         {
             SongPlayer.Pause();
             time.Stop();
+
             IsPause = true;
+
             PlayStop = new RelayCommand(Resume);
         }
 
         private void Resume()
         {
             time.Start();
-            IsPause = false;
             SongPlayer.Play();
+
+            IsPause = false;
+            isEnd = false;
+
             PlayStop = new RelayCommand(Stop);
         }
 
         private void ToPrevSong()
         {
-            MainViewModel.Instance.View = new SongView(Song.Prev);
+            MainViewModel.Instance.View = new SongView(Song.Prev, true);
         }
 
         private void ToNextSong()
         {
-            MainViewModel.Instance.View = new SongView(Song.Next);
+            MainViewModel.Instance.View = new SongView(Song.Next, true);
         }
 
         private void EndSong(MediaPlayer sender, object arg)
         {
+            isEnd = true;
+            SongPlayer.Pause();
+            SongPlayer.Position = new TimeSpan(0, 0, 0);
+            time.Stop();
+
             try
             {
                 // Binding property can only be changed when in main thread
                 // In an event where not in main thread so the app will throw
                 // System.Runtime.InteropServices.COMException (0x8001010E)
-                mainthread.TryEnqueue(() =>
+                mainDispatcher.TryEnqueue(() =>
                 {
                     IsPause = true;
                     PlayStop = new RelayCommand(PlaySong);
-
-                    SongPlayer.Pause();
                     PlayStopIcon = new BitmapImage(new Uri($"{SongsHandle.IconPath}replay.png"));
-                    SongPlayer.Position = new TimeSpan(0, 0, 0);
                 });
             }
             catch (Exception ex)
@@ -201,13 +210,13 @@ namespace Sbruhhhtify.ViewModels
             var slider = sender as Slider;
             var value = slider.Value;
 
-            mainthread.TryEnqueue(() =>
+            TimeSpan valueSec = TimeSpan.FromSeconds(value);
+            SongPlayer.Position = valueSec;
+
+            mainDispatcher.TryEnqueue(() =>
             {
                 Position = value;
-
-                TimeSpan time = TimeSpan.FromSeconds(value);
-
-                SongPlayer.Position = time;
+                if (isEnd) Resume();
             });
         }
     }

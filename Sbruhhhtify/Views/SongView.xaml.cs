@@ -17,15 +17,15 @@ namespace Sbruhhhtify.Views
             throw new NotFoundSongException();
         }
 
-        public SongView(Song song)
+        public SongView(Song song, bool IsChangeSong)
         {
             this.InitializeComponent();
-            Load(song);
+            Load(song, IsChangeSong);
         }
 
-        public void Load(Song song)
+        public void Load(Song song, bool IsChangeSong)
         {
-            SongVM = new SongViewModel(song);
+            SongVM = new SongViewModel(song, IsChangeSong);
 
             this.DataContext = SongVM;
 

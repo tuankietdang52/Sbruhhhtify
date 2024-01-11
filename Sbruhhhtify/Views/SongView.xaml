@@ -9,7 +9,7 @@
     mc:Ignorable="d"
     Name="songView">
 
-    <Grid Width="940" Height="800" DataContext="{Binding Song}">
+    <Grid Width="940" Height="800">
         <Grid.RowDefinitions>
             <RowDefinition Height="470"></RowDefinition>
             <RowDefinition Height="300"></RowDefinition>
@@ -24,8 +24,8 @@
         <Canvas 
             Width="940" 
             Grid.Row="0" 
-            Background="{Binding DataContext.BgColor, ElementName=songView}" 
-            DataContext="{Binding Current}">
+            Background="{x:Bind SongVM.BgColor}" 
+            DataContext="{Binding Song.Current}">
             <TextBlock
                 FontSize="40"
                 FontWeight="Bold"
@@ -53,15 +53,15 @@
             <Slider
                 Width="380" 
                 Minimum="0" 
-                Maximum="{Binding LengthSec}"
+                Maximum="{Binding Song.LengthSec}"
                 PointerCaptureLost="{x:Bind SongVM.ChangePosition}"
-                Value="{Binding DataContext.Position, Mode=TwoWay, ElementName=songView}">
+                Value="{Binding Position, Mode=TwoWay}">
             </Slider>
             <TextBlock
                 Width="140"
                 FontSize="20"
                 FontWeight="Bold"
-                Text="{Binding Current.Duration}">
+                Text="{Binding Song.Current.Duration}">
             </TextBlock>
         </StackPanel>
 
@@ -76,11 +76,11 @@
                 RelativePanel.AlignHorizontalCenterWithPanel="True" 
                 Width="100" 
                 Height="100"
-                Command="{Binding DataContext.PlayStop, ElementName=songView}">
+                Command="{Binding PlayStop}">
                 <Image 
                     Width="50"
                     Height="50"
-                    Source="{Binding DataContext.PlayStopIcon, ElementName=songView}">
+                    Source="{Binding PlayStopIcon}">
                 </Image>
             </Button>
             <Button 
@@ -88,7 +88,7 @@
                 Margin="0, 0, 40, 0" 
                 Width="100"
                 Height="100"
-                Command="{Binding DataContext.Previous, ElementName=songView}">
+                Command="{Binding Previous}">
                 <Image
                     Width="50"
                     Height="50"
@@ -100,7 +100,7 @@
                 Margin="40, 0, 0, 0" 
                 Width="100" 
                 Height="100"
-                Command="{Binding DataContext.Next, ElementName=songView}">
+                Command="{Binding Next}">
                 <Image 
                     Width="50"
                     Height="50"

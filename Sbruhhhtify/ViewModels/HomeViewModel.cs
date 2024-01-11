@@ -44,7 +44,7 @@ namespace Sbruhhhtify.ViewModels
                 return;
             }
 
-            MainViewModel.Instance.View = new SongView(song);
+            MainViewModel.Instance.View = new SongView(song, true);
             SongsHandle.Unsubcribe(this);
         }
     }

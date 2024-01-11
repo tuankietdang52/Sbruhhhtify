@@ -48,6 +48,15 @@
 
         <UserControl Grid.Column="1" Content="{Binding View}">
         </UserControl>
+
+        <Button 
+            Width="940" 
+            Height="100" 
+            Background="Red"
+            Grid.Column="1"
+            VerticalAlignment="Bottom">
+            
+        </Button>
     </Grid>
 </Window>
 

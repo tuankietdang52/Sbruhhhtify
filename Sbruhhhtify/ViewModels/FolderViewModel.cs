@@ -78,7 +78,7 @@ namespace Sbruhhhtify.ViewModels
             }
 
             SongsHandle.Unsubcribe(this);
-            MainViewModel.Instance.View = new SongView(song);
+            MainViewModel.Instance.View = new SongView(song, true);
         }
     }
 }
