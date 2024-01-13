@@ -22,6 +22,9 @@ namespace Sbruhhhtify.Models
         [ObservableProperty]
         private SolidColorBrush color;
 
+        [ObservableProperty]
+        private Windows.UI.Color hovercolor;
+
         private string source;
         public string Source {
             get { return source; }
@@ -48,6 +51,8 @@ namespace Sbruhhhtify.Models
             this.Name = Name;
             this.Source = Source;
             this.IsActive = IsActive;
+
+            SetHoverColor(48, 48, 48);
         }
 
         private void ChangeColor()
@@ -56,11 +61,16 @@ namespace Sbruhhhtify.Models
             else SetColor(73, 72, 72);
         }
 
-        private void SetColor(byte Red, byte Blue, byte Green)
+        public void SetColor(byte Red, byte Green, byte Blue)
         {
             var color = Windows.UI.Color.FromArgb(255, Red, Green, Blue);
 
             Color = new SolidColorBrush(color);
+        }
+
+        public void SetHoverColor(byte Red, byte Green, byte Blue)
+        {
+            Hovercolor = Windows.UI.Color.FromArgb(255, Red, Green, Blue);
         }
 
         private void SetImg()

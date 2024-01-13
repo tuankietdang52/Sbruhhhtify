@@ -34,6 +34,8 @@ namespace Sbruhhhtify
         private static Window mainView;
         public static Window MainView { get { return mainView; } }
 
+        public MainViewModel mainVM { get; private set; }
+
         public MainWindow()
         {
             this.InitializeComponent();
@@ -47,10 +49,12 @@ namespace Sbruhhhtify
             AppWindow.SetIcon(@"Assets/Icon/sbruhhhtify.ico");
             AppWindow.TitleBar.BackgroundColor = Windows.UI.Color.FromArgb(255, 41, 41, 41);
             AppWindow.TitleBar.ButtonBackgroundColor = Windows.UI.Color.FromArgb(255, 41, 41, 41);
+            Application.Current.Resources["ButtonBackgroundPointerOver"] = Windows.UI.Color.FromArgb(255, 48, 48, 48);
             DisableResize();
 
             mainView = this;
-            MainPage.DataContext = new MainViewModel();
+            mainVM = new MainViewModel();
+            MainPage.DataContext = mainVM;
         }
 
         // Disable Resize for User

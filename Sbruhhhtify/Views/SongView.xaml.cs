@@ -25,11 +25,17 @@ namespace Sbruhhhtify.Views
 
         public void Load(Song song, bool IsChangeSong)
         {
-            SongVM = new SongViewModel(song, IsChangeSong);
+            if (IsChangeSong)
+            {
+                SongVM = new SongViewModel(song);
+                SongsHandle.AddHistory(song);
+            }
+            else SongVM = SongViewModel.Instance;
 
             this.DataContext = SongVM;
 
-            SongsHandle.AddHistory(song);
+            MainViewModel.Instance.CurrentButton.SetColor(228, 0, 255);
+            MainViewModel.Instance.CurrentButton.SetHoverColor(255, 0, 251);
         }
     }
 }

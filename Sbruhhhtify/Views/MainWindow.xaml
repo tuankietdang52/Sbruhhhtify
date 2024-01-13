@@ -39,14 +39,35 @@
                             Background="{Binding Color, Mode=OneWay}"
                             Command="{Binding DataContext.ChangeContent, ElementName=MainPage}"
                             CommandParameter="{Binding Name}">
-                                <Image Source="{Binding Imgsource, Mode=OneWay}"></Image>
+                            <Image Source="{Binding Imgsource, Mode=OneWay}"></Image>
                         </Button>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </StackPanel>
 
+        <Button
+            Width="60"
+            Height="60"
+            Background="{x:Bind mainVM.CurrentButton.Color, Mode=OneWay}"
+            VerticalAlignment="Bottom"
+            Margin="0, 0, 0, 38"
+            Grid.Column="0"
+            Command="{Binding OpenCurrentSong}">
+            <Button.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.ThemeDictionaries>
+                        <ResourceDictionary x:Key="Dark">
+                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{Binding CurrentButton.Hovercolor}"></SolidColorBrush>
+                        </ResourceDictionary>
+                    </ResourceDictionary.ThemeDictionaries>
+                </ResourceDictionary>
+            </Button.Resources>
+                <Image Source="{x:Bind mainVM.CurrentButton.Imgsource}"></Image>
+        </Button>
+
         <UserControl Grid.Column="1" Content="{Binding View}">
         </UserControl>
+        
     </Grid>
 </Window>

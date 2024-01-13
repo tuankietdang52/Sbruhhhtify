@@ -40,7 +40,7 @@
                             Width="850"
                             Height="100"
                             Background="#3F3F3F"
-                            Command="{Binding DataContext.ToSongViewCommand, ElementName=searchView}"
+                            Command="{Binding DataContext.OpenSong, ElementName=searchView}"
                             CommandParameter="{Binding Instance}">
                             <StackPanel Orientation="Horizontal" Width="850" Height="100">
                                 <StackPanel.Resources>

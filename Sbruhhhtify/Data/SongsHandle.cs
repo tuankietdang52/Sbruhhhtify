@@ -19,8 +19,22 @@ namespace Sbruhhhtify.Data
     public class SongsHandle
     {
         public static readonly string IconPath = $"{AppDomain.CurrentDomain.BaseDirectory}\\Assets\\Icon\\";
+        
+        private static ObservableCollection<Song> list = GetData();
 
         private static List<IListSong> ObserverList = new List<IListSong>();
+
+        private static bool isRandom = false;
+        public static bool IsRandom
+        {
+            get => isRandom;
+            set
+            {
+                isRandom = value;
+                list = isRandom ? GetRandom() : GetData();
+            }
+        }
+
         public SongsHandle() { }
 
         public static void Notify()
@@ -52,6 +66,28 @@ namespace Sbruhhhtify.Data
         {
             SongsData data = new SongsData();
             return data.GetData();
+        }
+
+        private static ObservableCollection<Song> GetRandom()
+        {
+            var templist = GetData();
+            var randomlist = new ObservableCollection<Song>();
+
+            int i = 0;
+            while (i < templist.Count)
+            {
+                Random rand = new Random();
+                int index = rand.Next(0, templist.Count);
+                
+                var item = templist[index];
+
+                randomlist.Add(item);
+                templist.RemoveAt(index);
+
+                i++;
+            }
+
+            return randomlist;
         }
 
         public static void Insert(Song song)
@@ -86,8 +122,6 @@ namespace Sbruhhhtify.Data
 
         public static Song GetPreviousSong(Song current)
         {
-            var list = GetData();
-
             for (int index = 0; index < list.Count; index++)
             {
                 if (!current.Songpath.Equals(list[index].Songpath)) continue;
@@ -102,8 +136,6 @@ namespace Sbruhhhtify.Data
 
         public static Song GetNextSong(Song current)
         {
-            var list = GetData();
-
             for (int i = 0; i < list.Count; i++)
             {
                 if (!current.Songpath.Equals(list[i].Songpath)) continue;

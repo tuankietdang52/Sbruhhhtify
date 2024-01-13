@@ -13,18 +13,26 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Sbruhhhtify.ViewModels
 {
-    public partial class SearchViewModel : IListSong
+    public partial class SearchViewModel : AppViewModels, IListSong
     {
         public ObservableCollection<Song> SearchList { get; set; }
-        private List<Song> songList; 
+        private List<Song> songList;
+
+        public ICommand OpenSong { get; set; }
 
         public SearchViewModel()
         {
             SongsHandle.Subscribe(this);
             Load();
+        }
+
+        public override void GenerateCommand()
+        {
+            OpenSong = new RelayCommand<Song>(ToSongView);
         }
 
         private void Load()
@@ -55,17 +63,10 @@ namespace Sbruhhhtify.ViewModels
             }
         }
 
-        [RelayCommand]
-        public void ToSongView(Song song)
+        protected override void ToSongView(Song song)
         {
-            if (!song.IsLoaded)
-            {
-                PopupDialog.ShowError($"Cannot load {song.Name}, please delete and add again");
-                return;
-            }
-
+            base.ToSongView(song);
             SongsHandle.Unsubcribe(this);
-            MainViewModel.Instance.View = new SongView(song, true);
         }
     }
 }

@@ -19,9 +19,11 @@ using System.Timers;
 
 namespace Sbruhhhtify.ViewModels
 {
-    public partial class SongViewModel : ObservableObject
+    public partial class SongViewModel : AppViewModels
     {
         private readonly Microsoft.UI.Dispatching.DispatcherQueue mainDispatcher = Microsoft.UI.Dispatching.DispatcherQueue.GetForCurrentThread();
+
+        public static SongViewModel Instance { get; private set; }
 
         [ObservableProperty]
         private SongModel song;
@@ -48,26 +50,24 @@ namespace Sbruhhhtify.ViewModels
 
         private bool isEnd = false;
 
-        private bool isChangeSong = false;
-
         private System.Timers.Timer time;
 
         [ObservableProperty]
         private ICommand playStop;
 
+        // test :vv
         public ICommand Previous => new RelayCommand(ToPrevSong);
 
         public ICommand Next => new RelayCommand(ToNextSong);
 
         public SongViewModel() { }
 
-        public SongViewModel(Song current, bool IsChangeSong)
+        public SongViewModel(Song current) : base()
         {
-            isChangeSong = IsChangeSong;
-
             RandomBgColor();
             LoadModel(current);
-            GenerateCommand();
+
+            Instance = this;
 
             PlaySong();
         }
@@ -94,7 +94,7 @@ namespace Sbruhhhtify.ViewModels
 
             if (Song.IsGetError) return;
 
-            if (isChangeSong || SongPlayer is null) InitSongPlayer();
+            InitSongPlayer();
             InitTime();
         }
 
@@ -125,7 +125,7 @@ namespace Sbruhhhtify.ViewModels
             mainDispatcher.TryEnqueue(() => Position++);
         }
 
-        private void GenerateCommand() => PlayStop = new RelayCommand(Stop);
+        public override void GenerateCommand() => PlayStop = new RelayCommand(Stop);
 
         private void PlaySong()
         {
@@ -157,12 +157,12 @@ namespace Sbruhhhtify.ViewModels
 
         private void ToPrevSong()
         {
-            MainViewModel.Instance.View = new SongView(Song.Prev, true);
+            base.ToSongView(Song.Prev);
         }
 
         private void ToNextSong()
         {
-            MainViewModel.Instance.View = new SongView(Song.Next, true);
+            base.ToSongView(Song.Next);
         }
 
         private void EndSong(MediaPlayer sender, object arg)

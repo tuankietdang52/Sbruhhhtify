@@ -15,15 +15,14 @@ using Windows.Storage.Pickers;
 
 namespace Sbruhhhtify.ViewModels
 {
-    public class HomeViewModel : IListSong
+    public class HomeViewModel : AppViewModels, IListSong
     {
         public ObservableCollection<History> Histories { get; set; }
         public ICommand OpenSong { get; set; }
-        public HomeViewModel()
+        public HomeViewModel() : base()
         {
             SongsHandle.Subscribe(this);
             Update();
-            GenerateCommand();
         }
 
         public void Update()
@@ -31,20 +30,14 @@ namespace Sbruhhhtify.ViewModels
             Histories = SongsHandle.GetHistory();
         }
 
-        private void GenerateCommand()
+        public override void GenerateCommand()
         {
             OpenSong = new RelayCommand<Song>(ToSongView);
         }
 
-        private void ToSongView(Song song)
+        protected override void ToSongView(Song song)
         {
-            if (!song.IsLoaded)
-            {
-                PopupDialog.ShowError($"Cannot load {song.Name}, please delete and add again");
-                return;
-            }
-
-            MainViewModel.Instance.View = new SongView(song, true);
+            base.ToSongView(song);
             SongsHandle.Unsubcribe(this);
         }
     }

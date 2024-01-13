@@ -3,6 +3,7 @@ using Microsoft.UI.Xaml.Media;
 using Sbruhhhtify.Data;
 using Sbruhhhtify.Dialog;
 using Sbruhhhtify.Error;
+using Sbruhhhtify.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace Sbruhhhtify.Models
 {
     public partial class SongModel : ObservableObject
     {
+
         [ObservableProperty]
         private Song current;
 

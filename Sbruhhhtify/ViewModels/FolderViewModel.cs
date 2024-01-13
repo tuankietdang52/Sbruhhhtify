@@ -19,7 +19,7 @@ using System.Xml.Linq;
 
 namespace Sbruhhhtify.ViewModels
 {
-    public partial class FolderViewModel : ObservableObject, IListSong
+    public partial class FolderViewModel : AppViewModels, IListSong
     {
         [ObservableProperty]
         private ObservableCollection<Song> listSong;
@@ -27,11 +27,10 @@ namespace Sbruhhhtify.ViewModels
         public ICommand Delete { get; set; }
         public ICommand OpenSong { get; set; }
 
-        public FolderViewModel()
+        public FolderViewModel() : base()
         {
             SongsHandle.Subscribe(this);
             Update();
-            GenerateCommand();
         }
 
         public void Update()
@@ -39,7 +38,7 @@ namespace Sbruhhhtify.ViewModels
             ListSong = SongsHandle.GetData();
         }
 
-        private void GenerateCommand()
+        public override void GenerateCommand()
         {
             Add = new RelayCommand(HandleAddSong);
             Delete = new RelayCommand<string>(HandleDeleteSong);
@@ -69,16 +68,10 @@ namespace Sbruhhhtify.ViewModels
             SongsHandle.Delete(path);
         }
 
-        private void ToSongView(Song song)
+        protected override void ToSongView(Song song)
         {
-            if (!song.IsLoaded)
-            {
-                PopupDialog.ShowError($"Cannot load {song.Name}, please delete and add again");
-                return;
-            }
-
+            base.ToSongView(song);
             SongsHandle.Unsubcribe(this);
-            MainViewModel.Instance.View = new SongView(song, true);
         }
     }
 }
