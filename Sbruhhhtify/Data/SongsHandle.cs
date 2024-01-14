@@ -1,28 +1,22 @@
 ﻿using Microsoft.Data.Sqlite;
-using Microsoft.UI.Xaml.Controls;
 using Sbruhhhtify.Dialog;
 using Sbruhhhtify.Interface;
 using Sbruhhhtify.Models;
-using Sbruhhhtify.Error;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.Storage;
-using Windows.Storage.FileProperties;
-using Windows.UI.Popups;
 
 namespace Sbruhhhtify.Data
 {
     public class SongsHandle
     {
         public static readonly string IconPath = $"{AppDomain.CurrentDomain.BaseDirectory}\\Assets\\Icon\\";
-        
-        private static ObservableCollection<Song> list = GetData();
 
         private static List<IListSong> ObserverList = new List<IListSong>();
+
+        public static ObservableCollection<Song> SongList { get; private set; } 
+        public static ObservableCollection<Song> RandomList { get; private set; }
 
         private static bool isRandom = false;
         public static bool IsRandom
@@ -31,7 +25,8 @@ namespace Sbruhhhtify.Data
             set
             {
                 isRandom = value;
-                list = isRandom ? GetRandom() : GetData();
+                if (isRandom) InitRandomList();
+                Notify();
             }
         }
 
@@ -39,6 +34,7 @@ namespace Sbruhhhtify.Data
 
         public static void Notify()
         {
+            SongList = GetData();
             foreach (var list in ObserverList)
             {
                 list.Update();
@@ -65,16 +61,19 @@ namespace Sbruhhhtify.Data
         public static ObservableCollection<Song> GetData()
         {
             SongsData data = new SongsData();
-            return data.GetData();
+            SongList = data.GetData();
+            return SongList;
         }
 
-        private static ObservableCollection<Song> GetRandom()
+        private static void InitRandomList()
         {
             var templist = GetData();
             var randomlist = new ObservableCollection<Song>();
 
             int i = 0;
-            while (i < templist.Count)
+            int length = templist.Count;
+
+            while (i < length)
             {
                 Random rand = new Random();
                 int index = rand.Next(0, templist.Count);
@@ -87,7 +86,7 @@ namespace Sbruhhhtify.Data
                 i++;
             }
 
-            return randomlist;
+            RandomList = randomlist;
         }
 
         public static void Insert(Song song)
@@ -118,34 +117,6 @@ namespace Sbruhhhtify.Data
             {
                 PopupDialog.ShowError(ex.Message);
             }
-        }
-
-        public static Song GetPreviousSong(Song current)
-        {
-            for (int index = 0; index < list.Count; index++)
-            {
-                if (!current.Songpath.Equals(list[index].Songpath)) continue;
-
-                int previous = index - 1 < 0 ? list.Count - 1 : index - 1;
-
-                return list[previous];
-            }
-
-            throw new NotFoundSongException();
-        }
-
-        public static Song GetNextSong(Song current)
-        {
-            for (int i = 0; i < list.Count; i++)
-            {
-                if (!current.Songpath.Equals(list[i].Songpath)) continue;
-
-                int next = i + 1 >= list.Count ? 0 : i + 1;
-
-                return list[next];
-            }
-
-            throw new NotFoundSongException();
         }
 
         public static ObservableCollection<History> GetHistory()

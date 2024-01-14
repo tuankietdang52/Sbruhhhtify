@@ -46,6 +46,9 @@
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\next.png">
       <PackagePath>Assets\Icon\next.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\notreplay.png">
+      <PackagePath>Assets\Icon\notreplay.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ADMIN\source\repos\.vs\code\SBruhhhtify\Sbruhhhtify\Assets\Icon\pause.png">
       <PackagePath>Assets\Icon\pause.png</PackagePath>
     </AppxPackagedFile>

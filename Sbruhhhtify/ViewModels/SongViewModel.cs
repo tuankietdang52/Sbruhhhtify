@@ -8,22 +8,21 @@ using Sbruhhhtify.Dialog;
 using Sbruhhhtify.Data;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.Input;
-using Sbruhhhtify.Views;
 using Microsoft.UI.Xaml.Media.Imaging;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using System.Threading.Tasks;
-using System.Diagnostics;
-using System.Threading;
-using System.Timers;
+using Sbruhhhtify.Interface;
+using System.Collections.ObjectModel;
 
 namespace Sbruhhhtify.ViewModels
 {
-    public partial class SongViewModel : AppViewModels
+    public partial class SongViewModel : AppViewModels, IListSong
     {
         private readonly Microsoft.UI.Dispatching.DispatcherQueue mainDispatcher = Microsoft.UI.Dispatching.DispatcherQueue.GetForCurrentThread();
 
         public static SongViewModel Instance { get; private set; }
+
+        public ObservableCollection<Song> listSong { get; private set; }
 
         [ObservableProperty]
         private SongModel song;
@@ -38,6 +37,17 @@ namespace Sbruhhhtify.ViewModels
 
         public static MediaPlayer SongPlayer;
 
+        private bool isReplay = false;
+        public bool IsReplay
+        {
+            get => isReplay;
+            set
+            {
+                isReplay = value;
+                SetEndEvent();
+            }
+        }
+
         private bool isPause;
         public bool IsPause { 
             get {  return isPause; }
@@ -48,8 +58,6 @@ namespace Sbruhhhtify.ViewModels
             } 
         }
 
-        private bool isEnd = false;
-
         private System.Timers.Timer time;
 
         [ObservableProperty]
@@ -59,11 +67,15 @@ namespace Sbruhhhtify.ViewModels
         public ICommand Previous => new RelayCommand(ToPrevSong);
 
         public ICommand Next => new RelayCommand(ToNextSong);
+        public ICommand Replay => new RelayCommand(SetReplayMode);
 
         public SongViewModel() { }
 
         public SongViewModel(Song current) : base()
         {
+            SongsHandle.Subscribe(this);
+            Update();
+
             RandomBgColor();
             LoadModel(current);
 
@@ -90,7 +102,7 @@ namespace Sbruhhhtify.ViewModels
 
         private void LoadModel(Song current)
         {
-            Song = new SongModel(current);
+            Song = new SongModel(current, listSong);
 
             if (Song.IsGetError) return;
 
@@ -104,7 +116,15 @@ namespace Sbruhhhtify.ViewModels
 
             SongPlayer = new MediaPlayer();
             SongPlayer = Song.GetMedia();
-            SongPlayer.MediaEnded += EndSong;
+            SetEndEvent();
+        }
+
+        private void SetEndEvent()
+        {
+            SongPlayer.MediaEnded -= ReplaySong;
+            SongPlayer.MediaEnded -= HandleNextSong;
+
+            SongPlayer.MediaEnded += IsReplay ? ReplaySong : HandleNextSong;
         }
 
         private void InitTime()
@@ -126,6 +146,24 @@ namespace Sbruhhhtify.ViewModels
         }
 
         public override void GenerateCommand() => PlayStop = new RelayCommand(Stop);
+
+        public void Update()
+        {
+            var list = () =>
+            {
+                if (SongsHandle.IsRandom) return SongsHandle.RandomList;
+                else return SongsHandle.SongList ?? SongsHandle.GetData();
+            };
+
+            listSong = list();
+        }
+
+        private void SetReplayMode()
+        {
+            IsReplay = !IsReplay;
+
+            Song.SetReplayIcon(IsReplay);
+        }
 
         private void PlaySong()
         {
@@ -150,7 +188,6 @@ namespace Sbruhhhtify.ViewModels
             SongPlayer.Play();
 
             IsPause = false;
-            isEnd = false;
 
             PlayStop = new RelayCommand(Stop);
         }
@@ -158,16 +195,17 @@ namespace Sbruhhhtify.ViewModels
         private void ToPrevSong()
         {
             base.ToSongView(Song.Prev);
+            SongsHandle.Unsubcribe(this);
         }
 
         private void ToNextSong()
         {
             base.ToSongView(Song.Next);
+            SongsHandle.Unsubcribe(this);
         }
 
-        private void EndSong(MediaPlayer sender, object arg)
+        private void ReplaySong(MediaPlayer sender, object arg)
         {
-            isEnd = true;
             SongPlayer.Pause();
             SongPlayer.Position = new TimeSpan(0, 0, 0);
             time.Stop();
@@ -177,17 +215,17 @@ namespace Sbruhhhtify.ViewModels
                 // Binding property can only be changed when in main thread
                 // In an event where not in main thread so the app will throw
                 // System.Runtime.InteropServices.COMException (0x8001010E)
-                mainDispatcher.TryEnqueue(() =>
-                {
-                    IsPause = true;
-                    PlayStop = new RelayCommand(PlaySong);
-                    PlayStopIcon = new BitmapImage(new Uri($"{SongsHandle.IconPath}replay.png"));
-                });
+                mainDispatcher.TryEnqueue(PlaySong);
             }
             catch (Exception ex)
             {
                 PopupDialog.ShowError($"{ex}");
             }
+        }
+
+        private void HandleNextSong(MediaPlayer sender, object arg)
+        {
+            mainDispatcher.TryEnqueue(ToNextSong);
         }
 
         private void ChangeStopPlayIcon()
@@ -216,7 +254,6 @@ namespace Sbruhhhtify.ViewModels
             mainDispatcher.TryEnqueue(() =>
             {
                 Position = value;
-                if (isEnd) Resume();
             });
         }
     }

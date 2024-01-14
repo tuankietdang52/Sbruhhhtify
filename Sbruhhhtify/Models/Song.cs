@@ -1,16 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using Microsoft.UI.Xaml;
 using Sbruhhhtify.Data;
 using Sbruhhhtify.Dialog;
 using Sbruhhhtify.Error;
 using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using Windows.Media.Core;
 using Windows.Media.Playback;
 using Windows.Storage;
 using Windows.Storage.FileProperties;
@@ -78,12 +71,22 @@ namespace Sbruhhhtify.Models
             Date = CreationTime.ToString("MM/dd/yyyy");
         }
 
-        public async void HandleSetDuration()
+        public void HandleSetDuration()
         {
             try
             {
-                StorageFile file = await StorageFile.GetFileFromPathAsync(Songpath);
-                MusicProperties properties = await file.Properties.GetMusicPropertiesAsync();
+                StorageFile file = null;
+                MusicProperties properties = null;
+
+                Task task = Task.Run(async () =>
+                {
+                    file = await StorageFile.GetFileFromPathAsync(Songpath);
+                    properties = await file.Properties.GetMusicPropertiesAsync();
+                });
+
+                task.Wait();
+                
+                if (file is null) throw new NotFoundSongException();
 
                 Length = properties.Duration;
             }

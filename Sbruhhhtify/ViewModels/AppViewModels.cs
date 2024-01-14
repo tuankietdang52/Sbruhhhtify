@@ -1,13 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using Sbruhhhtify.Data;
 using Sbruhhhtify.Dialog;
 using Sbruhhhtify.Models;
 using Sbruhhhtify.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sbruhhhtify.ViewModels
 {

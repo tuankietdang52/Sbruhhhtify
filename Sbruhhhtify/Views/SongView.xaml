@@ -108,5 +108,25 @@
                 </Image>
             </Button>
         </RelativePanel>
+
+        <Button
+            Width="50"
+            Height="50"
+            Grid.Row="1"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Margin="0, 0, 60, 0"
+            Command="{Binding Replay}">
+            <Button.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.ThemeDictionaries>
+                        <ResourceDictionary x:Key="Dark">
+                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="Transparent"></SolidColorBrush>
+                        </ResourceDictionary>
+                    </ResourceDictionary.ThemeDictionaries>
+                </ResourceDictionary>
+            </Button.Resources>
+            <Image Source="{Binding Song.ReplayIcon, Mode=OneWay}"></Image>
+        </Button>
     </Grid>
 </UserControl>

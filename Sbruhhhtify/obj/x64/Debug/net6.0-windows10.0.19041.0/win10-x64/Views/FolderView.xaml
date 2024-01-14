@@ -126,16 +126,28 @@
             </ItemsControl>
         </ScrollViewer>
 
-        <Button 
-            Width="200" 
-            Height="50"
-            Command="{Binding Add}"
-            CommandParameter="{Binding}"
-            Grid.Row="1"
-            Margin="0, 0, 45, 0"
-            HorizontalAlignment="Center">
+        <StackPanel 
+            Orientation="Horizontal"
+            Grid.Row="1" 
+            Width="450" 
+            Spacing="50"
+            Margin="0, 0, 45, 0">
+            <Button 
+                Width="200" 
+                Height="50"
+                Command="{Binding Add}"
+                CommandParameter="{Binding}"
+                HorizontalAlignment="Center">
                 Add
-        </Button>
+            </Button>
+            <Button 
+                Width="200" 
+                Height="50"
+                Command="{Binding OpenRandom}"
+                HorizontalAlignment="Center">
+                Random Play
+            </Button>
+        </StackPanel>
     </Grid>
 </UserControl>
 

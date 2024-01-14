@@ -1,18 +1,12 @@
 ﻿using CommunityToolkit.Mvvm.Input;
-using Microsoft.UI.Input;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Sbruhhhtify.Data;
-using Sbruhhhtify.Dialog;
 using Sbruhhhtify.Interface;
 using Sbruhhhtify.Models;
-using Sbruhhhtify.Views;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Sbruhhhtify.ViewModels
@@ -43,7 +37,7 @@ namespace Sbruhhhtify.ViewModels
 
         public void Update()
         {
-            songList = SongsHandle.GetData().ToList<Song>();
+            songList = SongsHandle.SongList?.ToList<Song>() ?? SongsHandle.GetData().ToList<Song>();
         }
 
         public void Type(object sender, RoutedEventArgs arg)

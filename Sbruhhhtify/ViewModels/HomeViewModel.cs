@@ -1,17 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using Sbruhhhtify.Data;
-using Sbruhhhtify.Dialog;
 using Sbruhhhtify.Interface;
 using Sbruhhhtify.Models;
-using Sbruhhhtify.Views;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
-using Windows.Storage.Pickers;
 
 namespace Sbruhhhtify.ViewModels
 {

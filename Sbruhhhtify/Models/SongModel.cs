@@ -1,23 +1,18 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using Microsoft.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Media.Imaging;
 using Sbruhhhtify.Data;
 using Sbruhhhtify.Dialog;
 using Sbruhhhtify.Error;
-using Sbruhhhtify.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.ApplicationModel.VoiceCommands;
+using System.Collections.ObjectModel;
 using Windows.Media.Core;
 using Windows.Media.Playback;
-using Windows.UI;
 
 namespace Sbruhhhtify.Models
 {
     public partial class SongModel : ObservableObject
     {
+        private ObservableCollection<Song> listSongs;
 
         [ObservableProperty]
         private Song current;
@@ -32,17 +27,22 @@ namespace Sbruhhhtify.Models
 
         public bool IsGetError = false;
 
-        public SongModel(Song Song)
+        [ObservableProperty]
+        public BitmapImage replayIcon;
+
+        public SongModel(Song current, ObservableCollection<Song> listSongs)
         {
-            LoadSong(Song);
+            this.listSongs = listSongs;
+            LoadSong(current);
         }
 
-        private void LoadSong(Song Song)
+        private void LoadSong(Song current)
         {
             try
             {
-                LoadCurrent(Song);
-                LoadPrevAndNext(Song);
+                LoadCurrent(current);
+                LoadPrevAndNext(current);
+                SetReplayIcon(false);
             }
             catch (NotFoundSongException ex)
             {
@@ -51,19 +51,39 @@ namespace Sbruhhhtify.Models
             }
         }
 
-        private void LoadCurrent(Song Song)
+        private void LoadCurrent(Song current)
         {
-            Current = Song;
+            Current = current;
 
             if (!Current.IsLoaded) throw new NotFoundSongException();
 
             LengthSec = Current.Length.TotalSeconds;
         }
 
-        private void LoadPrevAndNext(Song Song)
+        private void LoadPrevAndNext(Song current)
         {
-            Prev = SongsHandle.GetPreviousSong(Song);
-            Next = SongsHandle.GetNextSong(Song);
+            int preindex = -1, nextindex = -1;
+
+            for (int i = 0; i < listSongs.Count; i++)
+            {
+                if (!current.Songpath.Equals(listSongs[i].Songpath)) continue;
+
+                preindex = i - 1 >= 0 ? i - 1 : listSongs.Count - 1;
+                nextindex = i + 1 < listSongs.Count ? i + 1 : 0;
+                break;
+            }
+
+            if (preindex == -1 || nextindex == -1) throw new NotFoundSongException();
+
+            Prev = listSongs[preindex];
+            Next = listSongs[nextindex];
+        }
+
+        public void SetReplayIcon(bool IsReplay)
+        {
+            string path = SongsHandle.IconPath;
+            path += IsReplay ? "replay.png" : "notreplay.png";
+            ReplayIcon = new BitmapImage(new Uri(path));
         }
 
         public MediaPlayer GetMedia()
